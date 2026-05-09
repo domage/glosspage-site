@@ -245,40 +245,30 @@ nav {
 .pricing-card {
   border-radius: 24px; padding: 32px 28px;
   border: 0.5px solid rgba(0,0,0,0.07);
+  display: flex; flex-direction: column;
 }
-.pricing-card--free { background: rgba(255,255,255,0.7); }
-.pricing-card--pro {
-  background: #2a1800;
-  border-color: transparent;
-  box-shadow: 0 8px 40px rgba(245,166,35,0.2);
-}
+.pricing-card--free { background: transparent; }
+.pricing-card--pro { background: transparent; border-color: transparent; box-shadow: none; border-radius: 0; }
 .pricing-tier {
-  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
   text-transform: uppercase; margin-bottom: 10px;
 }
-.pricing-card--free .pricing-tier { color: rgba(0,0,0,0.4); }
-.pricing-card--pro .pricing-tier { color: rgba(255,200,120,0.7); }
 .pricing-price {
   font-size: 36px; font-weight: 750; letter-spacing: -0.04em; margin-bottom: 4px;
 }
-.pricing-card--free .pricing-price { color: #1c1c1e; }
-.pricing-card--pro .pricing-price { color: #fff; }
 .pricing-period {
   font-size: 13px; color: rgba(0,0,0,0.4); margin-bottom: 28px;
 }
-.pricing-card--pro .pricing-period { color: rgba(255,255,255,0.45); }
 .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
 .pricing-features li {
   font-size: 14px; display: flex; align-items: flex-start; gap: 10px;
 }
 .pricing-card--free .pricing-features li { color: rgba(0,0,0,0.65); }
-.pricing-card--pro .pricing-features li { color: rgba(255,255,255,0.85); }
 .pricing-check { flex-shrink: 0; margin-top: 1px; opacity: 0.7; }
 .pricing-muted { opacity: 0.45 !important; }
 .pricing-note {
   font-size: 12px; margin-top: 14px; text-align: center;
 }
-.pricing-card--pro .pricing-note { color: rgba(255,255,255,0.35); }
 
 /* ── Footer ── */
 footer {
