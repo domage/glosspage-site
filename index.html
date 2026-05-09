@@ -55,21 +55,11 @@
   </div>
 
   <!-- Use cases — 5 phones in a row -->
-  <div style="margin-top:72px; overflow-x:auto; overflow-y:hidden; padding-bottom:32px; -webkit-overflow-scrolling:touch;">
-    <div style="display:flex; gap:24px; align-items:flex-end; justify-content:center; flex-wrap:nowrap; padding:0 24px;">
+  <div id="phone-carousel" style="margin-top:72px; overflow-x:auto; overflow-y:hidden; padding-bottom:32px; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory;">
+    <div style="display:flex; gap:24px; align-items:flex-end; justify-content:center; flex-wrap:nowrap; padding:0 24px; min-width:max-content;">
 
-      <!-- 1. Main app screen -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0;">
-        <div class="case-label">The app</div>
-        <div class="phone-shell" style="background:#f2f1ee;">
-          <div class="dyn-island"></div>
-          <img src="img/screen-main.jpg" alt="GlossPage main screen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; display:block;"/>
-          <div class="home-bar" style="background:rgba(0,0,0,0.25);"></div>
-        </div>
-      </div>
-
-      <!-- 2. Webtoons — diagonal split -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0;">
+      <!-- 1. Webtoons — diagonal split -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
         <div class="case-label">Webtoons</div>
         <div class="phone-shell" style="background:#1c1c1e;">
           <div class="dyn-island" style="background:#000;"></div>
@@ -86,8 +76,8 @@
         </div>
       </div>
 
-      <!-- 3. Language learning — diagonal split -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0;">
+      <!-- 2. Language learning — diagonal split -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
         <div class="case-label">Language learning</div>
         <div class="phone-shell" style="background:#fff;">
           <div class="dyn-island"></div>
@@ -104,8 +94,18 @@
         </div>
       </div>
 
+      <!-- 3. The app — in the MIDDLE -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
+        <div class="case-label">The app</div>
+        <div class="phone-shell" style="background:#f2f1ee;">
+          <div class="dyn-island"></div>
+          <img src="img/screen-main.jpg" alt="GlossPage main screen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; display:block;"/>
+          <div class="home-bar" style="background:rgba(0,0,0,0.25);"></div>
+        </div>
+      </div>
+
       <!-- 4. Blogs & news — diagonal split -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
         <div class="case-label">Blogs &amp; news</div>
         <div class="phone-shell" style="background:#fff;">
           <div class="dyn-island"></div>
@@ -123,7 +123,7 @@
       </div>
 
       <!-- 5. Social media — diagonal split -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
         <div class="case-label">Social media</div>
         <div class="phone-shell" style="background:#0a0010;">
           <div class="dyn-island" style="background:#000;"></div>
@@ -983,6 +983,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const browser = (navigator.language || '').split('-')[0];
   const detected = saved || (['de','ja','es','ko','fr'].includes(browser) ? browser : 'en');
   applyLang(detected);
+
+  // Scroll phone carousel to center "The app" on load
+  const carousel = document.getElementById('phone-carousel');
+  if (carousel) {
+    const phones = carousel.querySelectorAll('[style*="flex-shrink:0"]');
+    // "The app" is the 3rd phone (index 2, after Webtoons and Language learning)
+    const theAppPhone = phones[2];
+    if (theAppPhone) {
+      const scrollLeft = theAppPhone.offsetLeft - (carousel.clientWidth / 2) + (theAppPhone.clientWidth / 2);
+      carousel.scrollLeft = Math.max(0, scrollLeft);
+    }
+  }
 });
 </script>
 </body>
