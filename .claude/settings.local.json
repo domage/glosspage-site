@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(grep -n 'local_period.*\\\\$' /Users/glebradchenko/Developer/glosspage-site/index.html)",
+      "Bash(grep -n 'pro_period.*\\\\$' /Users/glebradchenko/Developer/glosspage-site/index.html)",
+      "Bash(sort -t: -k2 -n)",
+      "Bash(grep -v 'KEY_MAP\\\\|oder\\\\|o \\\\$')",
+      "Bash(grep -n 'plus_period.*\\\\$' /Users/glebradchenko/Developer/glosspage-site/index.html)"
     ]
   }
 }

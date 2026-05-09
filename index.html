@@ -19,7 +19,7 @@
     <a href="/" class="nav-logo">GlossPage</a>
     <div class="nav-actions">
       <a href="#features" class="nav-link" id="nav-features">Features</a>
-      <a href="#pricing" class="nav-link" id="nav-pricing">Pricing</a>
+      <a href="#pricing" class="nav-link" id="nav-pricing" style="display:none;">Pricing</a>
       <div class="lang-switcher">
         <button class="lang-btn" id="lang-switcher-btn" aria-label="Language">
           <span id="lang-current">🇺🇸 EN</span>
@@ -27,7 +27,7 @@
         </button>
         <div class="lang-dropdown" id="lang-dropdown"></div>
       </div>
-      <a id="nav-pro" href="#pricing" class="btn btn--pro" style="padding:8px 18px;font-size:13.5px;">Start Pro trial</a>
+      <a id="nav-pro" href="#pricing" class="btn btn--pro" style="padding:8px 18px;font-size:13.5px;display:none;">Start Pro trial</a>
     </div>
   </div>
 </nav>
@@ -35,7 +35,7 @@
 <!-- ── Hero ── -->
 <section class="hero">
   <div class="container--narrow">
-    <span class="hero-eyebrow" id="hero-eyebrow">iPhone · iOS 17.4+</span>
+    <span class="hero-eyebrow" id="hero-eyebrow">iPhone · iOS 26+</span>
     <h1><span id="h1-line1">Double-tap. Done.</span><br><em id="h1-em">Instant translation, in place.</em></h1>
     <p class="hero-sub" id="hero-sub">Tap the back of your phone or press the Action button — GlossPage takes a screenshot and overlays the translation right where the original text was. No copy-paste, no switching apps.</p>
 
@@ -49,7 +49,7 @@
           <span class="appstore-badge-name" id="appstore-name">Coming soon...</span>
         </div>
       </div>
-      <a href="#pricing" class="btn btn--outline" id="btn-pro">See plans ↗</a>
+      <a href="#pricing" class="btn btn--outline" id="btn-pro" style="display:none;">See plans ↗</a>
     </div>
     <p class="hero-note" id="hero-note">Free to start · No account required · Privacy-first OCR</p>
   </div>
@@ -60,7 +60,7 @@
 
       <!-- 1. Webtoons — diagonal split -->
       <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
-        <div class="case-label">Webtoons</div>
+        <div class="case-label" id="carousel-label-1">Webtoons</div>
         <div class="phone-shell" style="background:#1c1c1e;">
           <div class="dyn-island" style="background:#000;"></div>
           <img src="img/webtoon-translated.jpg" alt="Translated webtoon" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; display:block;"/>
@@ -70,15 +70,15 @@
           <div style="position:absolute; inset:0; pointer-events:none; z-index:5;">
             <svg width="275" height="593" viewBox="0 0 275 593" style="position:absolute;inset:0;"><line x1="154" y1="0" x2="124" y2="593" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/></svg>
           </div>
-          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Translated</div>
-          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Original</div>
+          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-t1">Translated</div>
+          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-o1">Original</div>
           <div class="home-bar" style="background:rgba(255,255,255,0.4);"></div>
         </div>
       </div>
 
       <!-- 2. Language learning — diagonal split -->
       <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
-        <div class="case-label">Language learning</div>
+        <div class="case-label" id="carousel-label-2">Language learning</div>
         <div class="phone-shell" style="background:#fff;">
           <div class="dyn-island"></div>
           <img src="img/lingoblau-translated.jpg" alt="LingoBlau translated" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; display:block;"/>
@@ -88,15 +88,15 @@
           <div style="position:absolute; inset:0; pointer-events:none; z-index:5;">
             <svg width="275" height="593" viewBox="0 0 275 593" style="position:absolute;inset:0;"><line x1="154" y1="0" x2="124" y2="593" stroke="rgba(0,0,0,0.2)" stroke-width="1.5"/></svg>
           </div>
-          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Translated</div>
-          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Original</div>
+          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-t2">Translated</div>
+          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-o2">Original</div>
           <div class="home-bar" style="background:rgba(0,0,0,0.18);"></div>
         </div>
       </div>
 
       <!-- 3. The app — in the MIDDLE -->
       <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
-        <div class="case-label">The app</div>
+        <div class="case-label" id="carousel-label-3">The app</div>
         <div class="phone-shell" style="background:#f2f1ee;">
           <div class="dyn-island"></div>
           <img src="img/screen-main.jpg" alt="GlossPage main screen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; display:block;"/>
@@ -106,7 +106,7 @@
 
       <!-- 4. Blogs & news — diagonal split -->
       <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
-        <div class="case-label">Blogs &amp; news</div>
+        <div class="case-label" id="carousel-label-4">Blogs &amp; news</div>
         <div class="phone-shell" style="background:#fff;">
           <div class="dyn-island"></div>
           <img src="img/writeit-translated.jpg" alt="Writeit translated" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; display:block;"/>
@@ -116,15 +116,15 @@
           <div style="position:absolute; inset:0; pointer-events:none; z-index:5;">
             <svg width="275" height="593" viewBox="0 0 275 593" style="position:absolute;inset:0;"><line x1="154" y1="0" x2="124" y2="593" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/></svg>
           </div>
-          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Translated</div>
-          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Original</div>
+          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-t3">Translated</div>
+          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-o3">Original</div>
           <div class="home-bar" style="background:rgba(0,0,0,0.18);"></div>
         </div>
       </div>
 
       <!-- 5. Social media — diagonal split -->
       <div style="display:flex; flex-direction:column; align-items:center; gap:10px; flex-shrink:0; scroll-snap-align:center;">
-        <div class="case-label">Social media</div>
+        <div class="case-label" id="carousel-label-5">Social media</div>
         <div class="phone-shell" style="background:#0a0010;">
           <div class="dyn-island" style="background:#000;"></div>
           <img src="img/stargram-translated.jpg" alt="Stargram translated" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top; display:block;"/>
@@ -134,8 +134,8 @@
           <div style="position:absolute; inset:0; pointer-events:none; z-index:5;">
             <svg width="275" height="593" viewBox="0 0 275 593" style="position:absolute;inset:0;"><line x1="154" y1="0" x2="124" y2="593" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/></svg>
           </div>
-          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Translated</div>
-          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);">Original</div>
+          <div style="position:absolute; top:42px; left:12px; z-index:10; background:rgba(220,100,20,0.9); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-t4">Translated</div>
+          <div style="position:absolute; top:42px; right:12px; z-index:10; background:rgba(255,200,50,0.85); backdrop-filter:blur(8px); border-radius:8px; padding:4px 12px; font-size:11px; font-weight:700; color:rgba(0,0,0,0.75); letter-spacing:0.04em; box-shadow:0 2px 12px rgba(0,0,0,0.25);" id="carousel-o4">Original</div>
           <div class="home-bar" style="background:rgba(255,255,255,0.4);"></div>
         </div>
       </div>
@@ -188,7 +188,7 @@
         </div>
         <h3 id="f6-h">Double Tap or Action Button</h3>
         <p id="f6-p">Assign GlossPage to Back Tap or the Action Button. From any app, double-tap the back of your iPhone — screenshot taken, translation done.</p>
-        <span class="feature-badge badge-free">Free · limited</span>
+        <span class="feature-badge badge-free" id="badge-free-1">Free · limited</span>
       </div>
 
       <!-- 2. Image Translation -->
@@ -202,7 +202,7 @@
         </div>
         <h3 id="f1-h">Image &amp; Screenshot Translation</h3>
         <p id="f1-p">Any image, any screenshot — street signs, menus, books, documents. Translated text overlays the original in place. Free includes limited daily use; GlossPage Local unlocks unlimited local translation.</p>
-        <span class="feature-badge badge-free">Free · limited</span>
+        <span class="feature-badge badge-free" id="badge-free-2">Free · limited</span>
       </div>
 
       <!-- 3. PDF Translation -->
@@ -216,7 +216,7 @@
         </div>
         <h3 id="f2-h">PDF Translation</h3>
         <p id="f2-p">Translate multi-page PDFs page by page, with translated text overlaid in the original layout. GlossPage Local removes watermarks; GlossPage Pro adds high-quality online translation and export.</p>
-        <span class="feature-badge badge-free">Free · limited</span>
+        <span class="feature-badge badge-free" id="badge-free-3">Free · limited</span>
       </div>
 
       <!-- 4. Web Page Translation -->
@@ -230,7 +230,7 @@
         </div>
         <h3 id="f3-h">Web Page Translation</h3>
         <p id="f3-p">Translate entire web pages through the Safari extension — text replaced in place, layout preserved. GlossPage Pro unlocks unlimited Safari translation.</p>
-        <span class="feature-badge badge-free">Free · limited</span>
+        <span class="feature-badge badge-free" id="badge-free-4">Free · limited</span>
       </div>
 
       <!-- 5. Share Extension -->
@@ -293,7 +293,7 @@
 </section>
 
 <!-- ── Pricing ── -->
-<section class="section" id="pricing">
+<section class="section" id="pricing" style="display:none;">
   <div class="container">
     <div class="section-label" id="price-label">Pricing</div>
     <h2 id="price-h2">Start free. Upgrade when translation becomes part of your day.</h2>
@@ -304,175 +304,171 @@
       <!-- GlossPage Free -->
       <div class="pricing-card" style="background:rgba(255,255,255,0.85); border:0.5px solid rgba(0,0,0,0.08); padding:24px; border-radius:20px;">
         <div style="margin-bottom:6px;">
-          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(0,0,0,0.4);margin-bottom:4px;">GlossPage Free</div>
-          <div style="font-size:11px;color:rgba(0,0,0,0.35);margin-bottom:4px;">Try GlossPage risk-free</div>
-          <div style="font-size:11px;color:rgba(0,0,0,0.35);">No credit card required</div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(0,0,0,0.4);margin-bottom:4px;" id="free-tier">GlossPage Free</div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.35);margin-bottom:4px;"><span id="free-tagline1">Try GlossPage risk-free</span></div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.35);"><span id="free-tagline2">No credit card required</span></div>
         </div>
         <div style="display:flex;align-items:baseline;gap:3px;margin:10px 0 2px;">
           <span style="font-size:32px;font-weight:750;letter-spacing:-0.04em;color:#1c1c1e;">$0</span>
-          <span style="font-size:13px;font-weight:500;opacity:0.5;color:#1c1c1e;">forever</span>
+          <span style="font-size:13px;font-weight:500;opacity:0.5;color:#1c1c1e;" id="free-per">forever</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:20px;">
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,150,80,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">Image &amp; screenshot translation</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="free-f1">Image &amp; screenshot translation</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,150,80,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">PDF translation</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="free-f2">PDF translation</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,150,80,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">Back Tap &amp; Shortcuts</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="free-f3">Back Tap &amp; Shortcuts</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,150,80,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">Translation history</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="free-f4">Translation history</span></span>
           </div>
         </div>
         <div style="margin-top:auto;padding-top:12px;">
-          <div style="font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(0,0,0,0.25);margin-bottom:8px;">Not included</div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(0,0,0,0.25);margin-bottom:8px;"><span id="free-ni-label">Not included</span></div>
           <div style="display:flex;flex-direction:column;gap:6px;">
             <div style="display:flex;align-items:center;gap:10px;">
               <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2L2 10" stroke="rgba(0,0,0,0.2)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-              <span style="font-size:12px;color:rgba(0,0,0,0.3);">Online translation</span>
+              <span style="font-size:12px;color:rgba(0,0,0,0.3);"><span id="free-f5">Online translation</span></span>
             </div>
             <div style="display:flex;align-items:center;gap:10px;">
               <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2L2 10" stroke="rgba(0,0,0,0.2)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-              <span style="font-size:12px;color:rgba(0,0,0,0.3);">PDF text export</span>
+              <span style="font-size:12px;color:rgba(0,0,0,0.3);"><span id="free-f6">PDF text export</span></span>
             </div>
           </div>
-        </div>
-        <div style="margin-top:auto;padding-top:12px;">
-          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.08);color:rgba(0,0,0,0.35);font-family:inherit;" disabled>Coming soon</button>
+          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.08);color:rgba(0,0,0,0.35);font-family:inherit;margin-top:12px;" disabled><span id="btn-download">Coming soon</span></button>
         </div>
       </div>
 
       <!-- GlossPage Local -->
       <div class="pricing-card" style="background:rgba(255,255,255,0.85); border:0.5px solid rgba(245,166,35,0.25); box-shadow:0 4px 22px rgba(245,166,35,0.06); padding:24px; border-radius:20px;">
         <div style="margin-bottom:6px;">
-          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(0,0,0,0.8);margin-bottom:4px;">GlossPage Local</div>
-          <div style="font-size:11px;color:rgba(0,0,0,0.35);margin-bottom:4px;">Private, on-device translation</div>
-          <div style="font-size:11px;color:rgba(0,0,0,0.35);">Best for offline use</div>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(0,0,0,0.8);margin-bottom:4px;" id="local-tier">GlossPage Local</div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.35);margin-bottom:4px;"><span id="local-tagline1">Private, on-device translation</span></div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.35);"><span id="local-tagline2">Best for offline use</span></div>
         </div>
         <div style="display:flex;align-items:baseline;gap:3px;margin:10px 0 2px;">
           <span style="font-size:32px;font-weight:750;letter-spacing:-0.04em;color:#1c1c1e;">$14.99</span>
-          <span style="font-size:13px;font-weight:500;opacity:0.5;color:#1c1c1e;">/yr</span>
+          <span style="font-size:13px;font-weight:500;opacity:0.5;color:#1c1c1e;" id="local-per">/yr</span>
         </div>
-        <div style="font-size:11px;color:rgba(0,0,0,0.35);margin-bottom:20px;">$1.99/month if billed monthly</div>
+        <div style="font-size:11px;color:rgba(0,0,0,0.35);margin-bottom:20px;" id="local-period">or $1.99/month</div>
         <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:20px;">
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,140,60,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">Unlimited image translation</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="local-f1">Unlimited image translation</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,140,60,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">Unlimited PDF translation</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="local-f2">Unlimited PDF translation</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,140,60,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">No export watermarks</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="local-f3">No export watermarks</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(0,140,60,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.7);">7-day translation history</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.7);"><span id="local-f4">7-day translation history</span></span>
           </div>
         </div>
         <div style="margin-top:auto;padding-top:12px;">
-          <div style="font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(0,0,0,0.25);margin-bottom:8px;">Not included</div>
+          <div style="font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(0,0,0,0.25);margin-bottom:8px;"><span id="local-ni-label">Not included</span></div>
           <div style="display:flex;flex-direction:column;gap:6px;">
             <div style="display:flex;align-items:center;gap:10px;">
               <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2L2 10" stroke="rgba(0,0,0,0.2)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-              <span style="font-size:12px;color:rgba(0,0,0,0.3);">High-quality online translation</span>
+              <span style="font-size:12px;color:rgba(0,0,0,0.3);"><span id="local-f5">High-quality online translation</span></span>
             </div>
             <div style="display:flex;align-items:center;gap:10px;">
               <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 2l8 8M10 2L2 10" stroke="rgba(0,0,0,0.2)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-              <span style="font-size:12px;color:rgba(0,0,0,0.3);">PDF text export</span>
+              <span style="font-size:12px;color:rgba(0,0,0,0.3);"><span id="local-f6">PDF text export</span></span>
             </div>
           </div>
-        </div>
-        <div style="margin-top:auto;padding-top:12px;">
-          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.15);color:rgba(180,100,0,0.6);font-family:inherit;" disabled>Coming soon</button>
+          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.15);color:rgba(180,100,0,0.6);font-family:inherit;margin-top:12px;" disabled><span id="btn-getlocal">Coming soon</span></button>
         </div>
       </div>
 
       <!-- GlossPage Pro -->
       <div class="pricing-card" style="background:rgba(255,255,255,0.95); border:2.5px solid rgba(255,140,0,0.8); box-shadow:0 8px 40px rgba(255,107,53,0.22); padding:24px; border-radius:22px; transform:scale(1.02);">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(0,0,0,0.8);">GlossPage Pro</div>
-          <span style="font-size:10px;font-weight:800;background:rgba(255,140,0,0.92);color:#fff;padding:2px 8px;border-radius:50px;letter-spacing:0.05em;box-shadow:0 2px 8px rgba(255,140,0,0.35);">BEST FOR MOST</span>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(0,0,0,0.8);" id="pro-tier">GlossPage Pro</div>
+          <span style="font-size:10px;font-weight:800;background:rgba(255,140,0,0.92);color:#fff;padding:2px 8px;border-radius:50px;letter-spacing:0.05em;box-shadow:0 2px 8px rgba(255,140,0,0.35);" id="pro-badge">BEST FOR MOST</span>
         </div>
-        <div style="font-size:11px;color:rgba(0,0,0,0.4);margin-bottom:4px;">Best for regular translation work</div>
+        <div style="font-size:11px;color:rgba(0,0,0,0.4);margin-bottom:4px;"><span id="pro-tagline">Best for regular translation work</span></div>
         <div style="display:flex;align-items:baseline;gap:3px;margin:10px 0 2px;">
           <span style="font-size:32px;font-weight:750;letter-spacing:-0.04em;color:#1c1c1e;">$29.99</span>
-          <span style="font-size:13px;font-weight:500;opacity:0.5;color:#1c1c1e;">/yr</span>
+          <span style="font-size:13px;font-weight:500;opacity:0.5;color:#1c1c1e;" id="pro-per">/yr</span>
         </div>
-        <div style="font-size:11px;color:rgba(0,0,0,0.4);margin-bottom:20px;">$4.99/month if billed monthly</div>
+        <div style="font-size:11px;color:rgba(0,0,0,0.4);margin-bottom:20px;" id="pro-period">or $4.99/month</div>
         <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:20px;">
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(200,100,0,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.75);">Everything in Local</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.75);"><span id="pro-f1">Everything in Local</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(200,100,0,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.75);">High-quality online translation</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.75);"><span id="pro-f2">High-quality online translation</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(200,100,0,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.75);">Unlimited translation history</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.75);"><span id="pro-f3">Unlimited translation history</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(200,100,0,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.75);">PDF text export</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.75);"><span id="pro-f4">PDF text export</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(200,100,0,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;color:rgba(0,0,0,0.75);">Unlimited Back Tap &amp; Safari</span>
+            <span style="font-size:13px;color:rgba(0,0,0,0.75);"><span id="pro-f5">Unlimited Back Tap &amp; Safari</span></span>
           </div>
         </div>
         <div style="margin-top:auto;padding-top:12px;">
-          <div style="font-size:11px;color:rgba(0,0,0,0.4);margin-bottom:10px;">7-day free trial · Cancel anytime</div>
-          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.15);color:rgba(180,100,0,0.6);font-family:inherit;" disabled>Coming soon</button>
+          <div style="font-size:11px;color:rgba(0,0,0,0.4);margin-bottom:10px;"><span id="price-note">7-day free trial · Cancel anytime</span></div>
+          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(245,166,35,0.07);border:1px solid rgba(245,166,35,0.15);color:rgba(180,100,0,0.6);font-family:inherit;" disabled><span id="btn-getpro">Coming soon</span></button>
         </div>
       </div>
 
       <!-- GlossPage Pro Plus -->
       <div class="pricing-card" style="background:rgba(10,8,5,0.92); border:1px solid rgba(255,160,80,0.18); box-shadow:0 4px 24px rgba(0,0,0,0.15); padding:24px; border-radius:20px; opacity:0.88;">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.4);">GlossPage Pro Plus</div>
-          <span style="font-size:9px;font-weight:600;background:rgba(255,160,80,0.18);color:rgba(255,200,120,0.85);padding:2px 7px;border-radius:50px;letter-spacing:0.04em;">HEAVY USE</span>
+          <div style="font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.4);" id="plus-tier">GlossPage Pro Plus</div>
+          <span style="font-size:9px;font-weight:600;background:rgba(255,160,80,0.18);color:rgba(255,200,120,0.85);padding:2px 7px;border-radius:50px;letter-spacing:0.04em;" id="plus-badge">HEAVY USE</span>
         </div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.82);margin-bottom:4px;">For heavy document workflows</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);margin-bottom:4px;"><span id="plus-tagline">For heavy document workflows</span></div>
         <div style="display:flex;align-items:baseline;gap:3px;margin:10px 0 2px;">
           <span style="font-size:32px;font-weight:750;letter-spacing:-0.04em;color:rgba(255,255,255,0.85);">$59.99</span>
-          <span style="font-size:13px;font-weight:500;opacity:0.5;color:rgba(255,255,255,0.6);">/yr</span>
+          <span style="font-size:13px;font-weight:500;opacity:0.5;color:rgba(255,255,255,0.6);" id="plus-per">/yr</span>
         </div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.82);margin-bottom:20px;">$8.99/month if billed monthly</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.82);margin-bottom:20px;" id="plus-period">or $8.99/month</div>
         <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:20px;">
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(255,200,120,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);">Everything in Pro</span>
+            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);"><span id="plus-f1">Everything in Pro</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(255,200,120,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);">3× online translation quota</span>
+            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);"><span id="plus-f2">3× online translation quota</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(255,200,120,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);">Higher PDF &amp; web limits</span>
+            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);"><span id="plus-f3">Higher PDF &amp; web limits</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(255,200,120,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);">Batch PDF translation</span>
+            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);"><span id="plus-f4">Batch PDF translation</span></span>
           </div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:20px;flex-shrink:0;text-align:center;"><svg width="14" height="11" viewBox="0 0 16 12" fill="none"><path d="M1.5 6l4 4.5 9-9" stroke="rgba(255,200,120,0.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);">Editable PDF export</span>
+            <span style="font-size:13px;line-height:1.5;color:rgba(255,255,255,0.88);"><span id="plus-f5">Editable PDF export</span></span>
           </div>
         </div>
         <div style="margin-top:auto;padding-top:12px;">
-          <div style="font-size:11px;color:rgba(255,255,255,0.75);margin-bottom:10px;">For large PDFs, batches &amp; heavy use</div>
-          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(255,160,80,0.06);border:1px solid rgba(255,160,80,0.12);color:rgba(255,200,120,0.6);font-family:inherit;" disabled>Coming soon</button>
+          <div style="font-size:11px;color:rgba(255,255,255,0.75);margin-bottom:10px;"><span id="plus-note">For large PDFs, batches &amp; heavy use</span></div>
+          <button style="width:100%;padding:11px 20px;border-radius:50px;font-size:14px;font-weight:590;cursor:not-allowed;opacity:0.85;background:rgba(255,160,80,0.06);border:1px solid rgba(255,160,80,0.12);color:rgba(255,200,120,0.6);font-family:inherit;" disabled><span id="btn-getplus">Coming soon</span></button>
         </div>
       </div>
 
@@ -492,8 +488,8 @@
     <div class="footer-copy"><span id="footer-copy">© 2026 Gleb Radchenko. All rights reserved.</span></div>
   </div>
   <div class="footer-contacts">
-    <span>Contact: <a href="mailto:admin@glosspage.com">admin@glosspage.com</a></span>
-    <span>Support: <a href="mailto:support@glosspage.com">support@glosspage.com</a></span>
+    <span id="footer-contact-label">Contact:</span> <a href="mailto:admin@glosspage.com">admin@glosspage.com</a>
+    <span id="footer-support-label">Support:</span> <a href="mailto:support@glosspage.com">support@glosspage.com</a>
   </div>
 </footer>
 
@@ -525,17 +521,21 @@ const TRANSLATIONS = {
     f8_h: "Translation History", f8_p: "Pro saves all translated images and PDFs to a dedicated folder in your Files app for easy reference.",
     price_label: "Pricing", price_h2: "Start free. Upgrade when translation becomes part of your day.",
     price_sub: "Try GlossPage Pro for 7 days with a limited online translation quota. Then stay free, unlock unlimited local translation, or choose Pro for high-quality online translation.",
-    free_tier: "GlossPage Free", free_price: "$0", free_period: "forever",
-    free_f1: "Limited local image & screenshot translation", free_f2: "Limited local PDF translation",
-    free_f3: "Shortcuts / Back Tap with daily limits", free_f4: "Exports include watermark",
-    free_f5: "No high-quality online translation", free_f6: "No saved history",
-    btn_download: "Download Free",
+    free_tier: "GlossPage Free", free_price: "$0", free_per: "forever",
+    free_tagline1: "Try GlossPage risk-free", free_tagline2: "No credit card required",
+    free_f1: "Image & screenshot translation", free_f2: "PDF translation",
+    free_f3: "Back Tap & Shortcuts", free_f4: "Translation history",
+    free_f5: "High-quality online translation", free_f6: "PDF text export",
+    free_ni_label: "Not included",
+    btn_download: "Coming soon",
     local_tier: "GlossPage Local", local_price: "$14.99", local_per: "/yr",
     local_period: "or $1.99/month",
-    local_f1: "Unlimited local image & screenshot translation", local_f2: "Unlimited local PDF translation",
-    local_f3: "No export watermarks", local_f4: "7-day history for translated documents",
-    local_f5: "No high-quality online translation", local_f6: "No advanced PDF text export",
-    btn_getlocal: "Get GlossPage Local →", local_note: "For private, on-device translation.",
+    local_tagline1: "Private, on-device translation", local_tagline2: "Best for offline use",
+    local_f1: "Unlimited image translation", local_f2: "Unlimited PDF translation",
+    local_f3: "No export watermarks", local_f4: "7-day translation history",
+    local_f5: "High-quality online translation", local_f6: "PDF text export",
+    local_ni_label: "Not included",
+    btn_getlocal: "Coming soon",
     pro_tier: "GlossPage Pro", pro_badge: "BEST FOR MOST", pro_price: "$29.99", pro_per: "/yr",
     pro_period: "or $4.99/month",
     pro_f1: "Everything in GlossPage Local", pro_f2: "High-quality online translation with 1× quota",
@@ -551,6 +551,7 @@ const TRANSLATIONS = {
     btn_getplus: "Get GlossPage Pro Plus →", plus_note: "For large PDFs, batches and frequent online translation.",
     footer_support: "Support", footer_privacy: "Privacy", footer_terms: "Terms",
     footer_copy: "© 2026 Gleb Radchenko. All rights reserved.",
+    footer_contact_label: "Contact:", footer_support_label: "Support:",
   },
   de: {
     nav_features: "Funktionen", nav_pricing: "Preise", nav_pro: "Pro holen",
@@ -559,7 +560,7 @@ const TRANSLATIONS = {
     hero_sub: "Richte deine Kamera auf ein Schild, Dokument oder Screenshot. GlossPage erkennt den Text und legt die Übersetzung direkt darüber — kein Kopieren, kein App-Wechsel.",
     btn_appstore: "App Store", btn_appstore_sub: "Laden im",
     btn_pro: "Pro holen ↗",
-    hero_note: "Kostenlos herunterladen · iOS 17.4+ · Kein Konto erforderlich",
+    hero_note: "Kostenlos herunterladen · iOS 26+ · Kein Konto erforderlich",
     how_label: "So funktioniert's", how_h2: "Drei Schritte zur Übersetzung",
     how1_h: "Bild auswählen", how1_p: "Wähle ein Foto aus deiner Bibliothek, mach ein neues mit der Kamera oder teile ein Bild aus einer beliebigen App. Funktioniert auch mit Screenshots.",
     how2_h: "Text wird erkannt", how2_p: "GlossPage nutzt Apples Vision-Framework auf dem Gerät, um jede Textregion zu finden — kein Internet für die Texterkennung nötig.",
@@ -583,14 +584,15 @@ const TRANSLATIONS = {
     free_f5: "PDF-Wasserzeichen beim Export", free_f6: "Teilen-Erweiterung",
     btn_download: "Kostenlos laden",
     pro_tier: "Pro", pro_price: "24,99 €", pro_per: "/Jahr",
-    pro_period: "oder $4.99/Monat",
+    pro_period: "or $4.99/month",
     pro_f1: "Alles aus Kostenlos, unbegrenzt", pro_f2: "Premium Online-Übersetzung — bis 50 Seiten/Tag",
     pro_f3: "Kein Exportwasserzeichen", pro_f4: "Export: Text, Markdown & zweisprachig",
     pro_f5: "Übersetzungsverlauf", pro_f6: "Unbegrenzte Verknüpfungen & Rücktipp",
     pro_f7: "Unbegrenzte Safari-Webübersetzung", pro_f8: "",
     btn_getpro: "Pro holen →", price_note: "Abrechnung über den App Store. Jederzeit kündigen.",
     footer_support: "Support", footer_privacy: "Datenschutz", footer_terms: "AGB",
-    footer_copy: "© 2026 GlossPage. Alle Rechte vorbehalten.",
+    footer_copy: "© 2026 Gleb Radchenko. Alle Rechte vorbehalten.",
+    footer_contact_label: "Kontakt:", footer_support_label: "Support:",
   },
   ja: {
     nav_features: "機能", nav_pricing: "料金", nav_pro: "Proを入手",
@@ -599,7 +601,7 @@ const TRANSLATIONS = {
     hero_sub: "カメラを看板、書類、スクリーンショットに向けるだけ。GlossPageがテキストを認識し、翻訳を画像の上に重ねて表示します。コピーも切り替えも不要。",
     btn_appstore: "App Store", btn_appstore_sub: "ダウンロード",
     btn_pro: "Proを入手 ↗",
-    hero_note: "無料ダウンロード · iOS 17.4以降 · アカウント不要",
+    hero_note: "無料ダウンロード · iOS 26以降 · アカウント不要",
     how_label: "使い方", how_h2: "3ステップで翻訳完了",
     how1_h: "画像を選択", how1_p: "ライブラリから写真を選択するか、カメラで新しく撮影するか、他のアプリから画像を共有できます。スクリーンショットにも対応。",
     how2_h: "テキストを認識", how2_p: "GlossPageはAppleのオンデバイスVisionフレームワークを使用して画像内のテキスト領域を検出・抽出します。OCRにインターネット不要。",
@@ -623,7 +625,7 @@ const TRANSLATIONS = {
     free_f5: "PDFエクスポート時に透かし", free_f6: "共有拡張機能",
     btn_download: "無料でダウンロード",
     pro_tier: "Pro", pro_price: "$29.99", pro_per: "/年",
-    pro_period: "または月額 $4.99",
+    pro_period: "or $4.99/month",
     pro_f1: "無料プランのすべて、無制限", pro_f2: "プレミアムオンライン翻訳 — 1日50ページまで",
     pro_f3: "エクスポート透かしなし", pro_f4: "テキスト・Markdown・バイリンガル出力",
     pro_f5: "翻訳履歴", pro_f6: "ショートカット＆背面タップ 無制限",
@@ -631,6 +633,7 @@ const TRANSLATIONS = {
     btn_getpro: "Proを入手 →", price_note: "App Store経由で請求。いつでもキャンセル可能。",
     footer_support: "サポート", footer_privacy: "プライバシー", footer_terms: "利用規約",
     footer_copy: "© 2026 Gleb Radchenko. All rights reserved.",
+    footer_contact_label: "문의:", footer_support_label: "지원:",
   },
   es: {
     nav_features: "Funciones", nav_pricing: "Precios", nav_pro: "Obtener Pro",
@@ -639,7 +642,7 @@ const TRANSLATIONS = {
     hero_sub: "Apunta tu cámara a un cartel, documento o captura de pantalla. GlossPage lee el texto y superpone la traducción — sin copiar, sin cambiar de app.",
     btn_appstore: "App Store", btn_appstore_sub: "Descargar en el",
     btn_pro: "Obtener Pro ↗",
-    hero_note: "Descarga gratuita · iOS 17.4+ · Sin cuenta necesaria",
+    hero_note: "Descarga gratuita · iOS 26+ · Sin cuenta necesaria",
     how_label: "Cómo funciona", how_h2: "Tres pasos para cualquier traducción",
     how1_h: "Elige una imagen", how1_p: "Selecciona una foto de tu biblioteca, toma una nueva con la cámara o comparte una imagen desde cualquier app. También funciona con capturas de pantalla.",
     how2_h: "El texto se reconoce", how2_p: "GlossPage usa el framework Vision de Apple en el dispositivo para encontrar cada región de texto — sin internet para el OCR.",
@@ -670,7 +673,8 @@ const TRANSLATIONS = {
     pro_f7: "Traducción web Safari ilimitada", pro_f8: "",
     btn_getpro: "Obtener Pro →", price_note: "Facturado a través de App Store. Cancela cuando quieras.",
     footer_support: "Soporte", footer_privacy: "Privacidad", footer_terms: "Términos",
-    footer_copy: "© 2026 GlossPage. Todos los derechos reservados.",
+    footer_copy: "© 2026 Gleb Radchenko. Todos los derechos reservados.",
+    footer_contact_label: "Contacto:", footer_support_label: "Soporte:",
   },
   ko: {
     nav_features: "기능", nav_pricing: "가격", nav_pro: "Pro 구독",
@@ -679,7 +683,7 @@ const TRANSLATIONS = {
     hero_sub: "카메라를 간판, 문서, 스크린샷에 향하세요. GlossPage가 텍스트를 읽고 번역을 이미지 위에 바로 표시합니다 — 복사도, 앱 전환도 필요 없어요.",
     btn_appstore: "App Store", btn_appstore_sub: "다운로드",
     btn_pro: "Pro 구독 ↗",
-    hero_note: "무료 다운로드 · iOS 17.4 이상 · 계정 불필요",
+    hero_note: "무료 다운로드 · iOS 26 이상 · 계정 불필요",
     how_label: "사용 방법", how_h2: "3단계로 번역 완료",
     how1_h: "이미지 선택", how1_p: "라이브러리에서 사진을 선택하거나, 카메라로 새로 촬영하거나, 모든 앱에서 이미지를 공유하세요. 스크린샷도 지원합니다.",
     how2_h: "텍스트 인식", how2_p: "GlossPage는 Apple의 기기 내 Vision 프레임워크를 사용해 이미지의 모든 텍스트 영역을 찾아냅니다 — OCR에 인터넷 불필요.",
@@ -703,7 +707,7 @@ const TRANSLATIONS = {
     free_f5: "PDF 내보내기 시 워터마크", free_f6: "공유 확장",
     btn_download: "무료 다운로드",
     pro_tier: "Pro", pro_price: "$29.99", pro_per: "/년",
-    pro_period: "또는 월 $4.99",
+    pro_period: "or $4.99/month",
     pro_f1: "무료 플랜의 모든 것, 무제한", pro_f2: "프리미엄 온라인 번역 — 하루 50페이지",
     pro_f3: "내보내기 워터마크 없음", pro_f4: "텍스트·Markdown·이중 언어 출력",
     pro_f5: "번역 기록", pro_f6: "단축키 및 뒷면 탭 무제한",
@@ -711,6 +715,7 @@ const TRANSLATIONS = {
     btn_getpro: "Pro 구독 →", price_note: "App Store를 통해 청구됩니다. 언제든지 취소 가능.",
     footer_support: "지원", footer_privacy: "개인정보", footer_terms: "이용약관",
     footer_copy: "© 2026 Gleb Radchenko. All rights reserved.",
+    footer_contact_label: "문의:", footer_support_label: "지원:",
   },
   fr: {
     nav_features: "Fonctionnalités", nav_pricing: "Tarifs", nav_pro: "Obtenir Pro",
@@ -719,7 +724,7 @@ const TRANSLATIONS = {
     hero_sub: "Pointez votre appareil photo vers un panneau, un document ou une capture d'écran. GlossPage lit le texte et affiche la traduction par-dessus — sans copier, sans changer d'app.",
     btn_appstore: "App Store", btn_appstore_sub: "Télécharger sur l'",
     btn_pro: "Obtenir Pro ↗",
-    hero_note: "Téléchargement gratuit · iOS 17.4+ · Sans compte",
+    hero_note: "Téléchargement gratuit · iOS 26+ · Sans compte",
     how_label: "Comment ça marche", how_h2: "Trois étapes pour toute traduction",
     how1_h: "Choisir une image", how1_p: "Sélectionnez une photo de votre bibliothèque, prenez-en une nouvelle avec l'appareil photo ou partagez une image depuis n'importe quelle app.",
     how2_h: "Le texte est reconnu", how2_p: "GlossPage utilise le framework Vision d'Apple sur l'appareil pour trouver chaque région de texte — pas d'internet nécessaire pour l'OCR.",
@@ -750,7 +755,8 @@ const TRANSLATIONS = {
     pro_f7: "Traduction web Safari illimitée", pro_f8: "",
     btn_getpro: "Obtenir Pro →", price_note: "Facturé via l'App Store. Annulez à tout moment.",
     footer_support: "Support", footer_privacy: "Confidentialité", footer_terms: "CGU",
-    footer_copy: "© 2026 GlossPage. Tous droits réservés.",
+    footer_copy: "© 2026 Gleb Radchenko. Tous droits réservés.",
+    footer_contact_label: "Contact :", footer_support_label: "Support :",
   },
 };
 
@@ -770,30 +776,44 @@ const UPDATED_PRICING_COPY_BY_LANG = {
     price_label: "Pricing",
     price_h2: "Start free. Upgrade when translation becomes part of your day.",
     price_sub: "Try GlossPage Pro for 7 days with a limited online translation quota. Then stay free, unlock unlimited local translation, or choose Pro for high-quality online translation.",
-    free_tier: "GlossPage Free", free_price: "$0", free_period: "forever",
-    free_f1: "Limited local image & screenshot translation", free_f2: "Limited local PDF translation",
-    free_f3: "Shortcuts / Back Tap with daily limits", free_f4: "Exports include watermark",
-    free_f5: "No high-quality online translation", free_f6: "No saved history",
-    btn_download: "Download Free",
+    free_tier: "GlossPage Free", free_price: "$0", free_per: "forever",
+    free_tagline1: "Try GlossPage risk-free", free_tagline2: "No credit card required",
+    free_f1: "Image & screenshot translation", free_f2: "PDF translation",
+    free_f3: "Back Tap & Shortcuts", free_f4: "Translation history",
+    free_f5: "High-quality online translation", free_f6: "PDF text export",
+    free_ni_label: "Not included",
+    btn_download: "Coming soon",
     local_tier: "GlossPage Local", local_price: "$14.99", local_per: "/yr",
     local_period: "or $1.99/month",
-    local_f1: "Unlimited local image & screenshot translation", local_f2: "Unlimited local PDF translation",
-    local_f3: "No export watermarks", local_f4: "7-day history for translated documents",
-    local_f5: "No high-quality online translation", local_f6: "No advanced PDF text export",
-    btn_getlocal: "Get GlossPage Local →", local_note: "For private, on-device translation.",
+    local_tagline1: "Private, on-device translation", local_tagline2: "Best for offline use",
+    local_f1: "Unlimited image translation", local_f2: "Unlimited PDF translation",
+    local_f3: "No export watermarks", local_f4: "7-day translation history",
+    local_f5: "High-quality online translation", local_f6: "PDF text export",
+    local_ni_label: "Not included",
+    btn_getlocal: "Coming soon",
     pro_tier: "GlossPage Pro", pro_badge: "BEST FOR MOST", pro_price: "$29.99", pro_per: "/yr",
     pro_period: "or $4.99/month",
-    pro_f1: "Everything in GlossPage Local", pro_f2: "High-quality online translation with 1× quota",
-    pro_f3: "Text export from PDFs", pro_f4: "Unlimited history with multiple translations per item",
-    pro_f5: "Underline and bilingual translation modes", pro_f6: "Unlimited Shortcuts, Back Tap and Safari translation",
-    pro_f7: "", pro_f8: "",
-    btn_getpro: "Start GlossPage Pro trial →", price_note: "7-day trial. Billed via App Store. Cancel anytime.",
+    pro_tagline: "Best for regular translation work",
+    pro_f1: "Everything in Local", pro_f2: "High-quality online translation",
+    pro_f3: "Unlimited translation history", pro_f4: "PDF text export",
+    pro_f5: "Unlimited Back Tap & Safari", pro_f6: "", pro_f7: "", pro_f8: "",
+    btn_getpro: "Coming soon", price_note: "7-day free trial · Cancel anytime",
     plus_tier: "GlossPage Pro Plus", plus_badge: "HEAVY USE", plus_price: "$59.99", plus_per: "/yr",
     plus_period: "or $8.99/month",
-    plus_f1: "Everything in GlossPage Pro", plus_f2: "3× online translation quota",
-    plus_f3: "Higher PDF and webpage limits", plus_f4: "Batch PDF translation",
-    plus_f5: "Editable PDF export for heavy document work",
-    btn_getplus: "Get GlossPage Pro Plus →", plus_note: "For large PDFs, batches, and frequent online translation."
+    plus_tagline: "For heavy document workflows",
+    plus_f1: "Everything in Pro", plus_f2: "3× online translation quota",
+    plus_f3: "Higher PDF & web limits", plus_f4: "Batch PDF translation",
+    plus_f5: "Editable PDF export",
+    btn_getplus: "Coming soon", plus_note: "For large PDFs, batches & heavy use",
+    carousel_t1: "Translated", carousel_o1: "Original",
+    carousel_t2: "Translated", carousel_o2: "Original",
+    carousel_t3: "Translated", carousel_o3: "Original",
+    carousel_t4: "Translated", carousel_o4: "Original",
+    badge_free_1: "Free · limited", badge_free_2: "Free · limited",
+    badge_free_3: "Free · limited", badge_free_4: "Free · limited",
+    carousel_label_1: "Webtoons", carousel_label_2: "Language learning",
+    carousel_label_3: "The app", carousel_label_4: "Blogs & news", carousel_label_5: "Social media",
+    btn_appstore: "Coming soon",
   },
   de: {
     nav_pro: "Pro testen",
@@ -807,30 +827,44 @@ const UPDATED_PRICING_COPY_BY_LANG = {
     price_label: "Preise",
     price_h2: "Kostenlos starten. Upgrade, wenn Übersetzen Teil deines Alltags wird.",
     price_sub: "Teste GlossPage Pro 7 Tage lang mit begrenztem Online-Übersetzungskontingent. Danach bleibst du kostenlos, schaltest unbegrenzte lokale Übersetzung frei oder wählst Pro für hochwertige Online-Übersetzung.",
-    free_tier: "GlossPage Free", free_price: "0 €", free_period: "für immer",
-    free_f1: "Begrenzte lokale Bild- und Screenshot-Übersetzung", free_f2: "Begrenzte lokale PDF-Übersetzung",
-    free_f3: "Kurzbefehle / Rücktipp mit Tageslimits", free_f4: "Exporte enthalten Wasserzeichen",
-    free_f5: "Keine hochwertige Online-Übersetzung", free_f6: "Kein gespeicherter Verlauf",
-    btn_download: "Kostenlos laden",
+    free_tier: "GlossPage Free", free_price: "0 €", free_per: "dauerhaft", free_period: "für immer",
+    free_tagline1: "GlossPage risikofrei testen", free_tagline2: "Keine Kreditkarte nötig",
+    free_f1: "Bild- und Screenshot-Übersetzung", free_f2: "PDF-Übersetzung",
+    free_f3: "Rücktipp & Kurzbefehle", free_f4: "Übersetzungsverlauf",
+    free_f5: "Hochwertige Online-Übersetzung", free_f6: "PDF-Textexport",
+    free_ni_label: "Nicht enthalten",
+    btn_download: "Demnächst verfügbar",
     local_tier: "GlossPage Local", local_price: "14,99 €", local_per: "/Jahr",
-    local_period: "oder 1,99 €/Monat",
-    local_f1: "Unbegrenzte lokale Bild- und Screenshot-Übersetzung", local_f2: "Unbegrenzte lokale PDF-Übersetzung",
-    local_f3: "Keine Export-Wasserzeichen", local_f4: "7-Tage-Verlauf für übersetzte Dokumente",
-    local_f5: "Keine hochwertige Online-Übersetzung", local_f6: "Kein erweiterter PDF-Textexport",
-    btn_getlocal: "GlossPage Local holen →", local_note: "Für private Übersetzung direkt auf dem Gerät.",
+    local_period: "oder $1.99/Monat",
+    local_tagline1: "Lokale Privatübersetzung", local_tagline2: "Am besten für Offline-Nutzung",
+    local_f1: "Unbegrenzte Bildübersetzung", local_f2: "Unbegrenzte PDF-Übersetzung",
+    local_f3: "Keine Export-Wasserzeichen", local_f4: "7-Tage-Übersetzungsverlauf",
+    local_f5: "Hochwertige Online-Übersetzung", local_f6: "PDF-Textexport",
+    local_ni_label: "Nicht enthalten",
+    btn_getlocal: "Demnächst verfügbar",
     pro_tier: "GlossPage Pro", pro_badge: "FÜR DIE MEISTEN", pro_price: "29,99 €", pro_per: "/Jahr",
-    pro_period: "oder 4,99 €/Monat",
-    pro_f1: "Alles aus GlossPage Local", pro_f2: "Hochwertige Online-Übersetzung mit 1× Kontingent",
-    pro_f3: "Textexport aus PDFs", pro_f4: "Unbegrenzter Verlauf mit mehreren Übersetzungen pro Element",
-    pro_f5: "Unterstreichungs- und zweisprachige Übersetzungsmodi", pro_f6: "Unbegrenzte Kurzbefehle, Rücktipp und Safari-Übersetzung",
-    pro_f7: "", pro_f8: "",
-    btn_getpro: "GlossPage Pro kostenlos testen →", price_note: "7-Tage-Testversion. Abrechnung über den App Store. Jederzeit kündbar.",
+    pro_period: "oder $4.99/Monat",
+    pro_tagline: "Für normale Übersetzungsarbeit",
+    pro_f1: "Alles aus GlossPage Local", pro_f2: "Hochwertige Online-Übersetzung",
+    pro_f3: "Unbegrenzter Übersetzungsverlauf", pro_f4: "PDF-Textexport",
+    pro_f5: "Unbegrenzte Kurzbefehle, Rücktipp & Safari", pro_f6: "", pro_f7: "", pro_f8: "",
+    btn_getpro: "Demnächst verfügbar", price_note: "7-Tage kostenlos testen · Jederzeit kündbar",
     plus_tier: "GlossPage Pro Plus", plus_badge: "VIELNUTZER", plus_price: "59,99 €", plus_per: "/Jahr",
-    plus_period: "oder 8,99 €/Monat",
+    plus_period: "oder $8.99/Monat",
+    plus_tagline: "Für umfangreiche Dokumentenarbeit",
     plus_f1: "Alles aus GlossPage Pro", plus_f2: "3× Online-Übersetzungskontingent",
     plus_f3: "Höhere PDF- und Webseitenlimits", plus_f4: "PDF-Stapelübersetzung",
-    plus_f5: "Editierbarer PDF-Export für umfangreiche Dokumentarbeit",
-    btn_getplus: "GlossPage Pro Plus holen →", plus_note: "Für große PDFs, Stapelverarbeitung und häufige Online-Übersetzung."
+    plus_f5: "Editierbarer PDF-Export",
+    btn_getplus: "Demnächst verfügbar", plus_note: "Für große PDFs, Stapel & intensive Nutzung",
+    carousel_t1: "Übersetzt", carousel_o1: "Original",
+    carousel_t2: "Übersetzt", carousel_o2: "Original",
+    carousel_t3: "Übersetzt", carousel_o3: "Original",
+    carousel_t4: "Übersetzt", carousel_o4: "Original",
+    badge_free_1: "Free · Begrenzt", badge_free_2: "Free · Begrenzt",
+    badge_free_3: "Free · Begrenzt", badge_free_4: "Free · Begrenzt",
+    carousel_label_1: "Webtoons", carousel_label_2: "Sprachenlernen",
+    carousel_label_3: "Die App", carousel_label_4: "Blogs & Nachrichten", carousel_label_5: "Soziale Medien",
+    btn_appstore: "Demnächst verfügbar",
   },
   ja: {
     nav_pro: "Proを試す",
@@ -844,30 +878,44 @@ const UPDATED_PRICING_COPY_BY_LANG = {
     price_label: "料金",
     price_h2: "無料で始めて、毎日の翻訳に合わせてアップグレード。",
     price_sub: "GlossPage Proを7日間お試しできます。オンライン翻訳の上限付きです。その後は無料で使うか、GlossPage Localでローカル翻訳を無制限にするか、GlossPage Proで高品質オンライン翻訳を利用できます。",
-    free_tier: "GlossPage Free", free_price: "¥0", free_period: "永久に",
-    free_f1: "ローカル画像・スクリーンショット翻訳は制限付き", free_f2: "ローカルPDF翻訳は制限付き",
-    free_f3: "ショートカット / 背面タップは1日制限あり", free_f4: "エクスポートに透かし付き",
-    free_f5: "高品質オンライン翻訳なし", free_f6: "保存履歴なし",
-    btn_download: "無料でダウンロード",
+    free_tier: "GlossPage Free", free_price: "¥0", free_per: "無期限", free_period: "永久に",
+    free_tagline1: "GlossPageをリスクフリーで試す", free_tagline2: "クレジットカード不要",
+    free_f1: "画像・スクリーンショット翻訳", free_f2: "PDF翻訳",
+    free_f3: "背面タップ・ショートカット", free_f4: "翻訳履歴",
+    free_f5: "高品質オンライン翻訳", free_f6: "PDF-Textexport",
+    free_ni_label: "含まれません",
+    btn_download: "近日公開",
     local_tier: "GlossPage Local", local_price: "$14.99", local_per: "/年",
-    local_period: "または月額 $1.99",
-    local_f1: "ローカル画像・スクリーンショット翻訳が無制限", local_f2: "ローカルPDF翻訳が無制限",
-    local_f3: "エクスポート透かしなし", local_f4: "翻訳済みドキュメントの7日間履歴",
-    local_f5: "高品質オンライン翻訳なし", local_f6: "高度なPDFテキストエクスポートなし",
-    btn_getlocal: "GlossPage Localを入手 →", local_note: "プライベートなオンデバイス翻訳向け。",
+    local_period: "月額$1.99",
+    local_tagline1: "デバイス上でプライベートに翻訳", local_tagline2: "オフライン利用に最適",
+    local_f1: "無制限の画像翻訳", local_f2: "無制限のPDF翻訳",
+    local_f3: "エクスポート透かしなし", local_f4: "7日間の翻訳履歴",
+    local_f5: "高品質オンライン翻訳", local_f6: "PDF-Textexport",
+    local_ni_label: "含まれません",
+    btn_getlocal: "近日公開",
     pro_tier: "GlossPage Pro", pro_badge: "おすすめ", pro_price: "$29.99", pro_per: "/年",
-    pro_period: "または月額 $4.99",
-    pro_f1: "GlossPage Localのすべて", pro_f2: "1×上限付きの高品質オンライン翻訳",
-    pro_f3: "PDFからのテキストエクスポート", pro_f4: "各項目に複数翻訳を保存できる無制限履歴",
-    pro_f5: "下線表示とバイリンガル翻訳モード", pro_f6: "ショートカット、背面タップ、Safari翻訳が無制限",
-    pro_f7: "", pro_f8: "",
-    btn_getpro: "GlossPage Proを無料で試す →", price_note: "7日間トライアル。App Store経由で請求。いつでもキャンセル可能。",
+    pro_period: "月額$4.99",
+    pro_tagline: "定期的な翻訳作業に最適",
+    pro_f1: "GlossPage Localのすべて", pro_f2: "高品質オンライン翻訳",
+    pro_f3: "無制限の翻訳履歴", pro_f4: "PDF-Textexport",
+    pro_f5: "無制限の背面タップ・ショートカット・Safari", pro_f6: "", pro_f7: "", pro_f8: "",
+    btn_getpro: "近日公開", price_note: "7日間無料トライアル · いつでもキャンセル可能",
     plus_tier: "GlossPage Pro Plus", plus_badge: "ヘビー利用", plus_price: "$59.99", plus_per: "/年",
-    plus_period: "または月額 $8.99",
-    plus_f1: "GlossPage Proのすべて", plus_f2: "オンライン翻訳上限が3倍",
-    plus_f3: "PDFとWebページの上限が増加", plus_f4: "PDFの一括翻訳",
-    plus_f5: "大量ドキュメント向けの編集可能なPDFエクスポート",
-    btn_getplus: "GlossPage Pro Plusを入手 →", plus_note: "大きなPDF、一括処理、頻繁なオンライン翻訳向け。"
+    plus_period: "or $8.99/month",
+    plus_tagline: "大量ドキュメント作業に",
+    plus_f1: "GlossPage Proのすべて", plus_f2: "オンライン翻訳3倍枠",
+    plus_f3: "PDF・Webページの上限増加", plus_f4: "PDF一括翻訳",
+    plus_f5: "編集可能なPDFエクスポート",
+    btn_getplus: "近日公開", plus_note: "大きなPDF、一括処理、频繁なオンライン翻訳に",
+    carousel_t1: "翻訳済み", carousel_o1: "オリジナル",
+    carousel_t2: "翻訳済み", carousel_o2: "オリジナル",
+    carousel_t3: "翻訳済み", carousel_o3: "オリジナル",
+    carousel_t4: "翻訳済み", carousel_o4: "オリジナル",
+    badge_free_1: "Free · 制限あり", badge_free_2: "Free · 制限あり",
+    badge_free_3: "Free · 制限あり", badge_free_4: "Free · 制限あり",
+    carousel_label_1: "Webtoons", carousel_label_2: "語学学習",
+    carousel_label_3: "アプリ", carousel_label_4: "ブログ＆ニュース", carousel_label_5: "ソーシャルメディア",
+    btn_appstore: "近日公開",
   },
   es: {
     nav_pro: "Probar Pro",
@@ -881,30 +929,44 @@ const UPDATED_PRICING_COPY_BY_LANG = {
     price_label: "Precios",
     price_h2: "Empieza gratis. Mejora cuando traducir sea parte de tu día.",
     price_sub: "Prueba GlossPage Pro durante 7 días con una cuota limitada de traducción online. Luego sigue gratis, desbloquea traducción local ilimitada o elige Pro para traducción online de alta calidad.",
-    free_tier: "GlossPage Free", free_price: "$0", free_period: "para siempre",
-    free_f1: "Traducción local limitada de imágenes y capturas", free_f2: "Traducción local limitada de PDFs",
-    free_f3: "Atajos / Toque trasero con límites diarios", free_f4: "Exportaciones con marca de agua",
-    free_f5: "Sin traducción online de alta calidad", free_f6: "Sin historial guardado",
-    btn_download: "Descargar gratis",
+    free_tier: "GlossPage Free", free_price: "$0", free_per: "para siempre", free_period: "para siempre",
+    free_tagline1: "Prueba GlossPage sin riesgo", free_tagline2: "No se requiere tarjeta de crédito",
+    free_f1: "Traducción de imágenes y capturas", free_f2: "Traducción de PDF",
+    free_f3: "Toque trasero y atajos", free_f4: "Historial de traducciones",
+    free_f5: "Traducción en línea de alta calidad", free_f6: "Exportación de texto PDF",
+    free_ni_label: "No incluido",
+    btn_download: "Próximamente",
     local_tier: "GlossPage Local", local_price: "$14.99", local_per: "/año",
     local_period: "o $1.99/mes",
-    local_f1: "Traducción local ilimitada de imágenes y capturas", local_f2: "Traducción local ilimitada de PDFs",
-    local_f3: "Sin marcas de agua al exportar", local_f4: "Historial de 7 días para documentos traducidos",
-    local_f5: "Sin traducción online de alta calidad", local_f6: "Sin exportación avanzada de texto PDF",
-    btn_getlocal: "Obtener GlossPage Local →", local_note: "Para traducción privada en el dispositivo.",
+    local_tagline1: "Traducción privada en el dispositivo", local_tagline2: "Mejor para uso sin conexión",
+    local_f1: "Traducción de imágenes ilimitada", local_f2: "Traducción de PDF ilimitada",
+    local_f3: "Sin marcas de agua al exportar", local_f4: "Historial de traducciones de 7 días",
+    local_f5: "Traducción en línea de alta calidad", local_f6: "Exportación de texto PDF",
+    local_ni_label: "No incluido",
+    btn_getlocal: "Próximamente",
     pro_tier: "GlossPage Pro", pro_badge: "PARA LA MAYORÍA", pro_price: "$29.99", pro_per: "/año",
     pro_period: "o $4.99/mes",
-    pro_f1: "Todo lo de GlossPage Local", pro_f2: "Traducción online de alta calidad con cuota 1×",
-    pro_f3: "Exportación de texto desde PDFs", pro_f4: "Historial ilimitado con varias traducciones por elemento",
-    pro_f5: "Modos de traducción subrayada y bilingüe", pro_f6: "Atajos, Toque trasero y traducción Safari ilimitados",
-    pro_f7: "", pro_f8: "",
-    btn_getpro: "Probar GlossPage Pro gratis →", price_note: "Prueba de 7 días. Facturado mediante App Store. Cancela cuando quieras.",
+    pro_tagline: "Para trabajo de traducción regular",
+    pro_f1: "Todo lo de GlossPage Local", pro_f2: "Traducción en línea de alta calidad",
+    pro_f3: "Historial de traducciones ilimitado", pro_f4: "Exportación de texto PDF",
+    pro_f5: "Toque trasero, atajos y Safari ilimitados", pro_f6: "", pro_f7: "", pro_f8: "",
+    btn_getpro: "Próximamente", price_note: "Prueba gratis de 7 días · Cancela cuando quieras",
     plus_tier: "GlossPage Pro Plus", plus_badge: "USO INTENSIVO", plus_price: "$59.99", plus_per: "/año",
     plus_period: "o $8.99/mes",
-    plus_f1: "Todo lo de GlossPage Pro", plus_f2: "3× cuota de traducción online",
-    plus_f3: "Límites mayores para PDFs y páginas web", plus_f4: "Traducción de PDFs por lotes",
-    plus_f5: "Exportación PDF editable para trabajo pesado con documentos",
-    btn_getplus: "Obtener GlossPage Pro Plus →", plus_note: "Para PDFs grandes, lotes y traducción online frecuente."
+    plus_tagline: "Para flujos de trabajo intensivo",
+    plus_f1: "Todo lo de GlossPage Pro", plus_f2: "3× cuota de traducción en línea",
+    plus_f3: "Límites mayores para PDFs y webs", plus_f4: "Traducción de PDFs por lotes",
+    plus_f5: "Exportación PDF editable",
+    btn_getplus: "Próximamente", plus_note: "Para PDFs grandes, lotes y uso intensivo",
+    carousel_t1: "Traducido", carousel_o1: "Original",
+    carousel_t2: "Traducido", carousel_o2: "Original",
+    carousel_t3: "Traducido", carousel_o3: "Original",
+    carousel_t4: "Traducido", carousel_o4: "Original",
+    badge_free_1: "Free · Limitado", badge_free_2: "Free · Limitado",
+    badge_free_3: "Free · Limitado", badge_free_4: "Free · Limitado",
+    carousel_label_1: "Webtoons", carousel_label_2: "Aprendizaje de idiomas",
+    carousel_label_3: "La app", carousel_label_4: "Blogs y noticias", carousel_label_5: "Redes sociales",
+    btn_appstore: "Próximamente",
   },
   ko: {
     nav_pro: "Pro 체험",
@@ -918,30 +980,44 @@ const UPDATED_PRICING_COPY_BY_LANG = {
     price_label: "가격",
     price_h2: "무료로 시작하고, 번역이 일상이 되면 업그레이드하세요.",
     price_sub: "제한된 온라인 번역 할당량으로 GlossPage Pro를 7일 동안 체험하세요. 이후 무료로 계속 쓰거나, GlossPage Local로 로컬 번역을 무제한으로 이용하거나, Pro로 고품질 온라인 번역을 사용할 수 있습니다.",
-    free_tier: "GlossPage Free", free_price: "₩0", free_period: "영구적으로",
-    free_f1: "제한된 로컬 이미지 및 스크린샷 번역", free_f2: "제한된 로컬 PDF 번역",
-    free_f3: "단축어 / 뒷면 탭 일일 제한", free_f4: "내보내기에 워터마크 포함",
-    free_f5: "고품질 온라인 번역 없음", free_f6: "저장된 기록 없음",
-    btn_download: "무료 다운로드",
+    free_tier: "GlossPage Free", free_price: "₩0", free_per: "영구적으로", free_period: "영구적으로",
+    free_tagline1: "GlossPage를 위험 없이 체험하기", free_tagline2: "신용카드 필요 없음",
+    free_f1: "이미지 및 스크린샷 번역", free_f2: "PDF 번역",
+    free_f3: "뒷면 탭 및 단축어", free_f4: "번역 기록",
+    free_f5: "고품질 온라인 번역", free_f6: "PDF 텍스트 내보내기",
+    free_ni_label: "포함되지 않음",
+    btn_download: "곧 출시",
     local_tier: "GlossPage Local", local_price: "$14.99", local_per: "/년",
     local_period: "또는 월 $1.99",
-    local_f1: "로컬 이미지 및 스크린샷 번역 무제한", local_f2: "로컬 PDF 번역 무제한",
-    local_f3: "내보내기 워터마크 없음", local_f4: "번역 문서 7일 기록",
-    local_f5: "고품질 온라인 번역 없음", local_f6: "고급 PDF 텍스트 내보내기 없음",
-    btn_getlocal: "GlossPage Local 구독 →", local_note: "개인적인 기기 내 번역용.",
+    local_tagline1: "기기에서 비공개 번역", local_tagline2: "오프라인 사용에 최적",
+    local_f1: "무제한 이미지 번역", local_f2: "무제한 PDF 번역",
+    local_f3: "내보내기 워터마크 없음", local_f4: "7일 번역 기록",
+    local_f5: "고품질 온라인 번역", local_f6: "PDF 텍스트 내보내기",
+    local_ni_label: "포함되지 않음",
+    btn_getlocal: "곧 출시",
     pro_tier: "GlossPage Pro", pro_badge: "대부분에게 추천", pro_price: "$29.99", pro_per: "/년",
     pro_period: "또는 월 $4.99",
-    pro_f1: "GlossPage Local의 모든 기능", pro_f2: "1× 할당량의 고품질 온라인 번역",
-    pro_f3: "PDF에서 텍스트 내보내기", pro_f4: "항목별 여러 번역을 지원하는 무제한 기록",
-    pro_f5: "밑줄 및 이중 언어 번역 모드", pro_f6: "단축어, 뒷면 탭, Safari 번역 무제한",
-    pro_f7: "", pro_f8: "",
-    btn_getpro: "GlossPage Pro 무료 체험 →", price_note: "7일 체험. App Store를 통해 청구됩니다. 언제든지 취소 가능.",
+    pro_tagline: "정기적인 번역 작업에",
+    pro_f1: "GlossPage Local의 모든 기능", pro_f2: "고품질 온라인 번역",
+    pro_f3: "무제한 번역 기록", pro_f4: "PDF 텍스트 내보내기",
+    pro_f5: "뒷면 탭·단축어·Safari 무제한", pro_f6: "", pro_f7: "", pro_f8: "",
+    btn_getpro: "곧 출시", price_note: "7일 무료 체험 · 언제든지 취소 가능",
     plus_tier: "GlossPage Pro Plus", plus_badge: "헤비 유저", plus_price: "$59.99", plus_per: "/년",
     plus_period: "또는 월 $8.99",
-    plus_f1: "GlossPage Pro의 모든 기능", plus_f2: "온라인 번역 할당량 3배",
+    plus_tagline: "대규모 문서 작업에",
+    plus_f1: "GlossPage Pro의 모든 기능", plus_f2: "온라인 번역 3배 할당량",
     plus_f3: "더 높은 PDF 및 웹페이지 한도", plus_f4: "PDF 일괄 번역",
-    plus_f5: "대용량 문서 작업용 편집 가능한 PDF 내보내기",
-    btn_getplus: "GlossPage Pro Plus 구독 →", plus_note: "큰 PDF, 일괄 작업, 잦은 온라인 번역용."
+    plus_f5: "편집 가능한 PDF 내보내기",
+    btn_getplus: "곧 출시", plus_note: "큰 PDF, 일괄 작업, 잦은 온라인 번역에",
+    carousel_t1: "번역됨", carousel_o1: "원본",
+    carousel_t2: "번역됨", carousel_o2: "원본",
+    carousel_t3: "번역됨", carousel_o3: "원본",
+    carousel_t4: "번역됨", carousel_o4: "원본",
+    badge_free_1: "Free · 제한 있음", badge_free_2: "Free · 제한 있음",
+    badge_free_3: "Free · 제한 있음", badge_free_4: "Free · 제한 있음",
+    carousel_label_1: "웹툰", carousel_label_2: "언어 학습",
+    carousel_label_3: "앱", carousel_label_4: "블로그＆뉴스", carousel_label_5: "소셜 미디어",
+    btn_appstore: "곧 출시",
   },
   fr: {
     nav_pro: "Essayer Pro",
@@ -955,30 +1031,44 @@ const UPDATED_PRICING_COPY_BY_LANG = {
     price_label: "Tarifs",
     price_h2: "Commencez gratuitement. Passez à une offre supérieure quand la traduction devient quotidienne.",
     price_sub: "Essayez GlossPage Pro pendant 7 jours avec un quota limité de traduction en ligne. Ensuite, restez sur l'offre gratuite, débloquez la traduction locale illimitée ou choisissez Pro pour la traduction en ligne de haute qualité.",
-    free_tier: "GlossPage Free", free_price: "0 €", free_period: "pour toujours",
-    free_f1: "Traduction locale limitée d'images et captures", free_f2: "Traduction locale limitée des PDFs",
-    free_f3: "Raccourcis / Double-tap avec limites quotidiennes", free_f4: "Exports avec filigrane",
-    free_f5: "Pas de traduction en ligne de haute qualité", free_f6: "Pas d'historique enregistré",
-    btn_download: "Télécharger gratuitement",
+    free_tier: "GlossPage Free", free_price: "0 €", free_per: "en permanence", free_period: "pour toujours",
+    free_tagline1: "Essayez GlossPage sans risque", free_tagline2: "Aucune carte requise",
+    free_f1: "Traduction d'images et captures", free_f2: "Traduction de PDF",
+    free_f3: "Double-tap et raccourcis", free_f4: "Historique des traductions",
+    free_f5: "Traduction en ligne de haute qualité", free_f6: "Export de texte PDF",
+    free_ni_label: "Non inclus",
+    btn_download: "Bientôt disponible",
     local_tier: "GlossPage Local", local_price: "14,99 €", local_per: "/an",
-    local_period: "ou 1,99 €/mois",
-    local_f1: "Traduction locale illimitée d'images et captures", local_f2: "Traduction locale illimitée des PDFs",
-    local_f3: "Aucun filigrane à l'export", local_f4: "Historique de 7 jours pour les documents traduits",
-    local_f5: "Pas de traduction en ligne de haute qualité", local_f6: "Pas d'export avancé du texte PDF",
-    btn_getlocal: "Obtenir GlossPage Local →", local_note: "Pour la traduction privée sur l'appareil.",
+    local_period: "ou $1.99/mois",
+    local_tagline1: "Traduction privée sur l'appareil", local_tagline2: "Idéal pour usage hors ligne",
+    local_f1: "Traduction d'images illimitée", local_f2: "Traduction de PDF illimitée",
+    local_f3: "Aucun filigrane à l'export", local_f4: "Historique des traductions 7 jours",
+    local_f5: "Traduction en ligne de haute qualité", local_f6: "Export de texte PDF",
+    local_ni_label: "Non inclus",
+    btn_getlocal: "Bientôt disponible",
     pro_tier: "GlossPage Pro", pro_badge: "POUR LA PLUPART", pro_price: "29,99 €", pro_per: "/an",
-    pro_period: "ou 4,99 €/mois",
-    pro_f1: "Tout GlossPage Local", pro_f2: "Traduction en ligne de haute qualité avec quota 1×",
-    pro_f3: "Export du texte depuis les PDFs", pro_f4: "Historique illimité avec plusieurs traductions par élément",
-    pro_f5: "Modes de traduction soulignée et bilingue", pro_f6: "Raccourcis, Double-tap et traduction Safari illimités",
-    pro_f7: "", pro_f8: "",
-    btn_getpro: "Essayer GlossPage Pro gratuitement →", price_note: "Essai de 7 jours. Facturé via l'App Store. Annulable à tout moment.",
+    pro_period: "ou $4.99/mois",
+    pro_tagline: "Pour le travail de traduction régulier",
+    pro_f1: "Tout GlossPage Local", pro_f2: "Traduction en ligne de haute qualité",
+    pro_f3: "Historique des traductions illimité", pro_f4: "Export de texte PDF",
+    pro_f5: "Double-tap, raccourcis et Safari illimités", pro_f6: "", pro_f7: "", pro_f8: "",
+    btn_getpro: "Bientôt disponible", price_note: "Essai gratuit de 7 jours · Annulable à tout moment",
     plus_tier: "GlossPage Pro Plus", plus_badge: "USAGE INTENSIF", plus_price: "59,99 €", plus_per: "/an",
-    plus_period: "ou 8,99 €/mois",
+    plus_period: "ou $8.99/mois",
+    plus_tagline: "Pour les workflows documentaires intensifs",
     plus_f1: "Tout GlossPage Pro", plus_f2: "Quota de traduction en ligne 3×",
     plus_f3: "Limites PDF et pages web plus élevées", plus_f4: "Traduction PDF par lots",
-    plus_f5: "Export PDF modifiable pour les gros documents",
-    btn_getplus: "Obtenir GlossPage Pro Plus →", plus_note: "Pour les grands PDFs, les lots et la traduction en ligne fréquente."
+    plus_f5: "Export PDF modifiable",
+    btn_getplus: "Bientôt disponible", plus_note: "Pour les grands PDFs, les lots et l'usage intensif",
+    carousel_t1: "Traduit", carousel_o1: "Original",
+    carousel_t2: "Traduit", carousel_o2: "Original",
+    carousel_t3: "Traduit", carousel_o3: "Original",
+    carousel_t4: "Traduit", carousel_o4: "Original",
+    badge_free_1: "Free · Limité", badge_free_2: "Free · Limité",
+    badge_free_3: "Free · Limité", badge_free_4: "Free · Limité",
+    carousel_label_1: "Webtoons", carousel_label_2: "Apprentissage des langues",
+    carousel_label_3: "L'application", carousel_label_4: "Blogs et actualités", carousel_label_5: "Réseaux sociaux",
+    btn_appstore: "Bientôt disponible",
   }
 };
 
@@ -987,12 +1077,7 @@ for (const lang of Object.keys(TRANSLATIONS)) {
 }
 
 for (const lang of Object.keys(TRANSLATIONS)) {
-  TRANSLATIONS[lang].btn_appstore = "Coming soon";
   TRANSLATIONS[lang].btn_appstore_sub = "";
-  TRANSLATIONS[lang].btn_download = "Coming soon";
-  TRANSLATIONS[lang].btn_getlocal = "Coming soon";
-  TRANSLATIONS[lang].btn_getpro = "Coming soon";
-  TRANSLATIONS[lang].btn_getplus = "Coming soon";
 }
 
 const LANG_META = {
@@ -1019,21 +1104,34 @@ const KEY_MAP = {
   f5_h:"f5-h", f5_p:"f5-p", f6_h:"f6-h", f6_p:"f6-p",
   f7_h:"f7-h", f7_p:"f7-p", f8_h:"f8-h", f8_p:"f8-p",
   price_label:"price-label", price_h2:"price-h2", price_sub:"price-sub",
-  free_tier:"free-tier", free_price:"free-price", free_period:"free-period",
+  free_tier:"free-tier", free_price:"free-price", free_per:"free-per", free_period:"free-period",
+  free_tagline1:"free-tagline1", free_tagline2:"free-tagline2",
   free_f1:"free-f1", free_f2:"free-f2", free_f3:"free-f3", free_f4:"free-f4",
-  free_f5:"free-f5", free_f6:"free-f6", btn_download:"btn-download",
+  free_f5:"free-f5", free_f6:"free-f6", free_ni_label:"free-ni-label", btn_download:"btn-download",
   local_tier:"local-tier", local_price:"local-price", local_per:"local-per", local_period:"local-period",
+  local_tagline1:"local-tagline1", local_tagline2:"local-tagline2",
   local_f1:"local-f1", local_f2:"local-f2", local_f3:"local-f3", local_f4:"local-f4",
-  local_f5:"local-f5", local_f6:"local-f6", btn_getlocal:"btn-getlocal", local_note:"local-note",
+  local_f5:"local-f5", local_f6:"local-f6", local_ni_label:"local-ni-label", btn_getlocal:"btn-getlocal",
   pro_tier:"pro-tier", pro_badge:"pro-badge", pro_price:"pro-price", pro_per:"pro-per", pro_period:"pro-period",
+  pro_tagline:"pro-tagline",
   pro_f1:"pro-f1", pro_f2:"pro-f2", pro_f3:"pro-f3", pro_f4:"pro-f4",
   pro_f5:"pro-f5", pro_f6:"pro-f6", pro_f7:"pro-f7", pro_f8:"pro-f8",
   btn_getpro:"btn-getpro", price_note:"price-note",
   plus_tier:"plus-tier", plus_badge:"plus-badge", plus_price:"plus-price", plus_per:"plus-per", plus_period:"plus-period",
+  plus_tagline:"plus-tagline",
   plus_f1:"plus-f1", plus_f2:"plus-f2", plus_f3:"plus-f3", plus_f4:"plus-f4", plus_f5:"plus-f5",
   btn_getplus:"btn-getplus", plus_note:"plus-note",
   footer_support:"footer-support", footer_privacy:"footer-privacy",
   footer_terms:"footer-terms", footer_copy:"footer-copy",
+  footer_contact_label:"footer-contact-label", footer_support_label:"footer-support-label",
+  badge_free_1:"badge-free-1", badge_free_2:"badge-free-2", badge_free_3:"badge-free-3", badge_free_4:"badge-free-4",
+  carousel_t1:"carousel-t1", carousel_o1:"carousel-o1",
+  carousel_t2:"carousel-t2", carousel_o2:"carousel-o2",
+  carousel_t3:"carousel-t3", carousel_o3:"carousel-o3",
+  carousel_t4:"carousel-t4", carousel_o4:"carousel-o4",
+  carousel_label_1:"carousel-label-1", carousel_label_2:"carousel-label-2",
+  carousel_label_3:"carousel-label-3", carousel_label_4:"carousel-label-4", carousel_label_5:"carousel-label-5",
+  btn_appstore:"appstore-name",
 };
 
 let currentLang = 'en';
@@ -1081,10 +1179,12 @@ function buildSwitcher() {
 
 document.addEventListener('DOMContentLoaded', () => {
   buildSwitcher();
-  // Auto-detect
+  // Auto-detect — URL param wins over localStorage, localStorage wins over browser
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get('lang');
   const saved = (() => { try { return localStorage.getItem('glosspage-lang'); } catch(e) { return null; } })();
   const browser = (navigator.language || '').split('-')[0];
-  const detected = saved || (['de','ja','es','ko','fr'].includes(browser) ? browser : 'en');
+  const detected = urlLang || saved || (['de','ja','es','ko','fr'].includes(browser) ? browser : 'en');
   applyLang(detected);
 
   // Scroll phone carousel to center "The app" on load

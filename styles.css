@@ -295,7 +295,7 @@ footer {
   display: flex; gap: 28px; flex-wrap: wrap;
 }
 .footer-contacts span { font-size: 12px; color: rgba(0,0,0,0.4); }
-.footer-contacts a { color: rgba(0,0,0,0.5); text-decoration: none; transition: color 0.15s; }
+.footer-contacts a { font-size: 12px; color: rgba(0,0,0,0.4); text-decoration: none; transition: color 0.15s; }
 .footer-contacts a:hover { color: #1c1c1e; }
 
 /* ── Divider ── */
