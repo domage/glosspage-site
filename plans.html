@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Compare Plans — GlossPage</title>
+  <meta
+    content="Compare GlossPage Free, Local, Pro, and Pro Plus plans for local image translation, PDF translation, Safari web translation, exports, and online translation quota."
+    name="description" />
+  <link href="img/glosspage-icon.png" rel="icon" type="image/png" />
+  <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo home-link" href="index.html">GlossPage</a>
+      <div class="nav-actions">
+        <a class="nav-link home-link" href="index.html" id="nav-home">Home</a>
+        <a class="nav-link features-link" href="index.html#features" id="nav-features">Features</a>
+        <a class="nav-link compare-link" href="plans.html" id="nav-compare">Compare Plans</a>
+        <a class="nav-link pricing-link" href="index.html#pricing" id="nav-pricing">Pricing</a>
+        <div class="lang-switcher">
+          <button aria-label="Language" class="lang-btn" id="lang-switcher-btn">
+            <span id="lang-current">🇺🇸 English</span>
+            <svg fill="none" height="6" viewBox="0 0 10 6" width="10">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="plans-page">
+    <div class="container">
+      <div class="plans-hero">
+        <div>
+          <div class="section-label" id="plans-label">Plan comparison</div>
+          <h1 id="plans-h1">Choose the GlossPage plan that fits your translation workflow.</h1>
+          <p id="plans-sub">Start with private local translation, then upgrade when you need online translation, exports,
+            or higher quality for dense visual text.</p>
+        </div>
+        <a class="btn btn--outline features-link" href="index.html#features" id="plans-back">Back to features</a>
+      </div>
+
+      <div class="plans-table-wrap">
+        <table class="plans-table" aria-describedby="plans-sub">
+          <thead>
+            <tr>
+              <th id="th-feature">Feature</th>
+              <th id="th-free">Free</th>
+              <th id="th-local">Local</th>
+              <th id="th-pro">Pro</th>
+              <th id="th-plus">Pro Plus</th>
+            </tr>
+          </thead>
+          <tbody id="plans-table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="plan-footnotes">
+        <p id="note-online">¹ Online translation quota is shared across image, PDF, and web translation.</p>
+        <p id="note-hd">² Higher precision AI models for nuanced content like comics, manhwa, literary text, and
+          idiomatic content. Pro Plus users can switch between HD (High Definition) and SD (Standard Definition, same as
+          Pro) modes. HD consumes the quota faster.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-brand home-link" href="index.html">GlossPage</a>
+      <div class="footer-links">
+        <span style="font-size:13px;color:rgba(0,0,0,0.3);" id="footer-appstore">App Store — coming soon</span>
+        <a href="mailto:support@glosspage.com" id="footer-support">Support</a>
+        <a href="privacy.html" id="footer-privacy">Privacy</a>
+        <a href="terms.html" id="footer-terms">Terms</a>
+      </div>
+      <div class="footer-copy"><span id="footer-copy">© 2026 Gleb Radchenko. All rights reserved.</span></div>
+    </div>
+    <div class="footer-contacts">
+      <span id="footer-contact-label">Contact:</span> <a href="mailto:admin@glosspage.com">admin@glosspage.com</a>
+      <span id="footer-support-label">Support:</span> <a href="mailto:support@glosspage.com">support@glosspage.com</a>
+    </div>
+  </footer>
+
+  <script>
+    const CHECK = "check";
+    const DASH = "dash";
+
+    const LANG_META = {
+      en: { label: "English", flag: "🇺🇸" },
+      de: { label: "Deutsch", flag: "🇩🇪" },
+      ja: { label: "日本語", flag: "🇯🇵" },
+      es: { label: "Español", flag: "🇪🇸" },
+      ko: { label: "한국어", flag: "🇰🇷" },
+      fr: { label: "Français", flag: "🇫🇷" }
+    };
+
+    const TRANSLATIONS = {
+      en: {
+        nav_home: "Home",
+        nav_features: "Features",
+        nav_compare: "Compare Plans",
+        nav_pricing: "Pricing",
+        plans_label: "Plan comparison",
+        plans_h1: "Choose the GlossPage plan that fits your translation workflow.",
+        plans_sub: "Start with private local translation, then upgrade when you need online translation, exports, or higher quality for dense visual text.",
+        plans_back: "Back to features",
+        th_feature: "Feature",
+        footer_appstore: "App Store — coming soon",
+        footer_support: "Support",
+        footer_privacy: "Privacy",
+        footer_terms: "Terms",
+        footer_copy: "© 2026 Gleb Radchenko. All rights reserved.",
+        footer_contact_label: "Contact:",
+        footer_support_label: "Support:",
+        note_online: "¹ Online translation quota is shared across image, PDF, and web translation.",
+        note_hd: "² Higher precision AI models for nuanced content like comics, manhwa, literary text, and idiomatic content. Pro Plus users can switch between HD (High Definition) and SD (Standard Definition, same as Pro) modes. HD consumes the quota faster.",
+        rows: [
+          ["Unlimited local image translation", CHECK, CHECK, CHECK, CHECK],
+          ["Local PDF translation", "10 pages/day", CHECK, CHECK, CHECK],
+          ["Shortcuts / Back Tap", "15/day", CHECK, CHECK, CHECK],
+          ["Translation history", "last 3", "unlimited", "unlimited", "unlimited"],
+          ["Bilingual mode", DASH, CHECK, CHECK, CHECK],
+          ["Remove watermarks", DASH, CHECK, CHECK, CHECK],
+          ["Safari Webtoon Grabber Extension", DASH, CHECK, CHECK, CHECK],
+          ["PDF raw text / Markdown export", DASH, DASH, CHECK, CHECK],
+          ["Online translation (images, PDFs, web) ¹", DASH, DASH, "1× quota", "3× quota"],
+          ["High Definition online translation ²", DASH, DASH, DASH, CHECK]
+        ]
+      },
+      de: {
+        nav_home: "Startseite",
+        nav_features: "Funktionen",
+        nav_compare: "Tarife vergleichen",
+        nav_pricing: "Preise",
+        plans_label: "Tarifvergleich",
+        plans_h1: "Wähle den GlossPage-Tarif, der zu deinem Übersetzungsablauf passt.",
+        plans_sub: "Starte mit privater lokaler Übersetzung und wechsle, wenn du Online-Übersetzung, Exporte oder höhere Qualität für dichten Bildtext brauchst.",
+        plans_back: "Zurück zu den Funktionen",
+        th_feature: "Funktion",
+        footer_appstore: "App Store — demnächst",
+        footer_support: "Support",
+        footer_privacy: "Datenschutz",
+        footer_terms: "AGB",
+        footer_copy: "© 2026 Gleb Radchenko. Alle Rechte vorbehalten.",
+        footer_contact_label: "Kontakt:",
+        footer_support_label: "Support:",
+        note_online: "¹ Das Online-Übersetzungskontingent wird gemeinsam für Bild-, PDF- und Web-Übersetzung genutzt.",
+        note_hd: "² Präzisere KI-Modelle für nuancierte Inhalte wie Comics, Manhwa, literarische Texte und idiomatische Formulierungen. Pro Plus-Nutzer können zwischen HD (High Definition) und SD (Standard Definition, wie Pro) wechseln. HD verbraucht das Kontingent schneller.",
+        rows: [
+          ["Unbegrenzte lokale Bildübersetzung", CHECK, CHECK, CHECK, CHECK],
+          ["Lokale PDF-Übersetzung", "10 Seiten/Tag", CHECK, CHECK, CHECK],
+          ["Kurzbefehle / Rücktipp", "15/Tag", CHECK, CHECK, CHECK],
+          ["Übersetzungsverlauf", "letzte 3", "unbegrenzt", "unbegrenzt", "unbegrenzt"],
+          ["Zweisprachiger Modus", DASH, CHECK, CHECK, CHECK],
+          ["Wasserzeichen entfernen", DASH, CHECK, CHECK, CHECK],
+          ["Safari Webtoon Grabber-Erweiterung", DASH, CHECK, CHECK, CHECK],
+          ["PDF-Rohtext- / Markdown-Export", DASH, DASH, CHECK, CHECK],
+          ["Online-Übersetzung (Bilder, PDFs, Web) ¹", DASH, DASH, "1× Kontingent", "3× Kontingent"],
+          ["High-Definition-Online-Übersetzung ²", DASH, DASH, DASH, CHECK]
+        ]
+      },
+      ja: {
+        nav_home: "ホーム",
+        nav_features: "機能",
+        nav_compare: "プラン比較",
+        nav_pricing: "料金",
+        plans_label: "プラン比較",
+        plans_h1: "翻訳ワークフローに合うGlossPageプランを選べます。",
+        plans_sub: "まずはプライベートなローカル翻訳から。オンライン翻訳、書き出し、密度の高い画像テキスト向けの高品質が必要になったらアップグレードできます。",
+        plans_back: "機能に戻る",
+        th_feature: "機能",
+        footer_appstore: "App Store — 近日公開",
+        footer_support: "サポート",
+        footer_privacy: "プライバシー",
+        footer_terms: "利用規約",
+        footer_copy: "© 2026 Gleb Radchenko. All rights reserved.",
+        footer_contact_label: "連絡先:",
+        footer_support_label: "サポート:",
+        note_online: "¹ オンライン翻訳枠は、画像、PDF、Web翻訳で共有されます。",
+        note_hd: "² 漫画、マンファ、文学的な文章、慣用表現など、ニュアンスのある内容向けの高精度AIモデルです。Pro PlusではHD（High Definition）とSD（Standard Definition、Proと同じ）を切り替えられます。HDは翻訳枠をより早く消費します。",
+        rows: [
+          ["無制限のローカル画像翻訳", CHECK, CHECK, CHECK, CHECK],
+          ["ローカルPDF翻訳", "10ページ/日", CHECK, CHECK, CHECK],
+          ["ショートカット / 背面タップ", "15回/日", CHECK, CHECK, CHECK],
+          ["翻訳履歴", "最新3件", "無制限", "無制限", "無制限"],
+          ["バイリンガルモード", DASH, CHECK, CHECK, CHECK],
+          ["透かし削除", DASH, CHECK, CHECK, CHECK],
+          ["Safari Webtoon Grabber拡張機能", DASH, CHECK, CHECK, CHECK],
+          ["PDF生テキスト / Markdown書き出し", DASH, DASH, CHECK, CHECK],
+          ["オンライン翻訳（画像、PDF、Web）¹", DASH, DASH, "1×枠", "3×枠"],
+          ["High Definitionオンライン翻訳 ²", DASH, DASH, DASH, CHECK]
+        ]
+      },
+      es: {
+        nav_home: "Inicio",
+        nav_features: "Funciones",
+        nav_compare: "Comparar planes",
+        nav_pricing: "Precios",
+        plans_label: "Comparación de planes",
+        plans_h1: "Elige el plan de GlossPage que encaja con tu flujo de traducción.",
+        plans_sub: "Empieza con traducción local privada y mejora cuando necesites traducción online, exportaciones o más calidad para texto visual denso.",
+        plans_back: "Volver a funciones",
+        th_feature: "Función",
+        footer_appstore: "App Store — próximamente",
+        footer_support: "Soporte",
+        footer_privacy: "Privacidad",
+        footer_terms: "Términos",
+        footer_copy: "© 2026 Gleb Radchenko. Todos los derechos reservados.",
+        footer_contact_label: "Contacto:",
+        footer_support_label: "Soporte:",
+        note_online: "¹ La cuota de traducción online se comparte entre traducción de imágenes, PDF y web.",
+        note_hd: "² Modelos de IA de mayor precisión para contenido con matices, como cómics, manhwa, texto literario y expresiones idiomáticas. Los usuarios de Pro Plus pueden cambiar entre HD (High Definition) y SD (Standard Definition, igual que Pro). HD consume la cuota más rápido.",
+        rows: [
+          ["Traducción local de imágenes ilimitada", CHECK, CHECK, CHECK, CHECK],
+          ["Traducción local de PDF", "10 páginas/día", CHECK, CHECK, CHECK],
+          ["Atajos / Toque posterior", "15/día", CHECK, CHECK, CHECK],
+          ["Historial de traducciones", "últimas 3", "ilimitado", "ilimitado", "ilimitado"],
+          ["Modo bilingüe", DASH, CHECK, CHECK, CHECK],
+          ["Eliminar marcas de agua", DASH, CHECK, CHECK, CHECK],
+          ["Extensión Safari Webtoon Grabber", DASH, CHECK, CHECK, CHECK],
+          ["Exportación de texto PDF / Markdown", DASH, DASH, CHECK, CHECK],
+          ["Traducción online (imágenes, PDF, web) ¹", DASH, DASH, "cuota 1×", "cuota 3×"],
+          ["Traducción online High Definition ²", DASH, DASH, DASH, CHECK]
+        ]
+      },
+      ko: {
+        nav_home: "홈",
+        nav_features: "기능",
+        nav_compare: "플랜 비교",
+        nav_pricing: "요금",
+        plans_label: "플랜 비교",
+        plans_h1: "번역 워크플로에 맞는 GlossPage 플랜을 선택하세요.",
+        plans_sub: "개인 정보가 보호되는 로컬 번역으로 시작하고, 온라인 번역, 내보내기 또는 밀도 높은 이미지 텍스트를 위한 더 높은 품질이 필요할 때 업그레이드하세요.",
+        plans_back: "기능으로 돌아가기",
+        th_feature: "기능",
+        footer_appstore: "App Store — 출시 예정",
+        footer_support: "지원",
+        footer_privacy: "개인정보 처리방침",
+        footer_terms: "약관",
+        footer_copy: "© 2026 Gleb Radchenko. All rights reserved.",
+        footer_contact_label: "문의:",
+        footer_support_label: "지원:",
+        note_online: "¹ 온라인 번역 할당량은 이미지, PDF, 웹 번역에 함께 사용됩니다.",
+        note_hd: "² 만화, 만화풍 웹툰, 문학 텍스트, 관용 표현처럼 뉘앙스가 중요한 콘텐츠를 위한 고정밀 AI 모델입니다. Pro Plus 사용자는 HD(High Definition)와 SD(Standard Definition, Pro와 동일) 모드를 전환할 수 있습니다. HD는 할당량을 더 빠르게 소모합니다.",
+        rows: [
+          ["무제한 로컬 이미지 번역", CHECK, CHECK, CHECK, CHECK],
+          ["로컬 PDF 번역", "10페이지/일", CHECK, CHECK, CHECK],
+          ["단축어 / 뒷면 탭", "15회/일", CHECK, CHECK, CHECK],
+          ["번역 기록", "최근 3개", "무제한", "무제한", "무제한"],
+          ["이중 언어 모드", DASH, CHECK, CHECK, CHECK],
+          ["워터마크 제거", DASH, CHECK, CHECK, CHECK],
+          ["Safari Webtoon Grabber 확장", DASH, CHECK, CHECK, CHECK],
+          ["PDF 원문 텍스트 / Markdown 내보내기", DASH, DASH, CHECK, CHECK],
+          ["온라인 번역(이미지, PDF, 웹) ¹", DASH, DASH, "1× 할당량", "3× 할당량"],
+          ["High Definition 온라인 번역 ²", DASH, DASH, DASH, CHECK]
+        ]
+      },
+      fr: {
+        nav_home: "Accueil",
+        nav_features: "Fonctionnalités",
+        nav_compare: "Comparer les offres",
+        nav_pricing: "Tarifs",
+        plans_label: "Comparaison des offres",
+        plans_h1: "Choisissez l'offre GlossPage adaptée à votre flux de traduction.",
+        plans_sub: "Commencez avec la traduction locale privée, puis passez à une offre supérieure quand il vous faut la traduction en ligne, l'export ou une meilleure qualité pour le texte visuel dense.",
+        plans_back: "Retour aux fonctionnalités",
+        th_feature: "Fonctionnalité",
+        footer_appstore: "App Store — bientôt disponible",
+        footer_support: "Support",
+        footer_privacy: "Confidentialité",
+        footer_terms: "Conditions",
+        footer_copy: "© 2026 Gleb Radchenko. Tous droits réservés.",
+        footer_contact_label: "Contact :",
+        footer_support_label: "Support :",
+        note_online: "¹ Le quota de traduction en ligne est partagé entre la traduction d'images, de PDF et du web.",
+        note_hd: "² Modèles d'IA plus précis pour les contenus nuancés comme les comics, manhwa, textes littéraires et expressions idiomatiques. Les utilisateurs Pro Plus peuvent basculer entre HD (High Definition) et SD (Standard Definition, identique à Pro). HD consomme le quota plus vite.",
+        rows: [
+          ["Traduction locale d'images illimitée", CHECK, CHECK, CHECK, CHECK],
+          ["Traduction locale de PDF", "10 pages/jour", CHECK, CHECK, CHECK],
+          ["Raccourcis / Toucher le dos", "15/jour", CHECK, CHECK, CHECK],
+          ["Historique des traductions", "3 derniers", "illimité", "illimité", "illimité"],
+          ["Mode bilingue", DASH, CHECK, CHECK, CHECK],
+          ["Suppression des filigranes", DASH, CHECK, CHECK, CHECK],
+          ["Extension Safari Webtoon Grabber", DASH, CHECK, CHECK, CHECK],
+          ["Export texte brut PDF / Markdown", DASH, DASH, CHECK, CHECK],
+          ["Traduction en ligne (images, PDF, web) ¹", DASH, DASH, "quota 1×", "quota 3×"],
+          ["Traduction en ligne High Definition ²", DASH, DASH, DASH, CHECK]
+        ]
+      }
+    };
+
+    const KEY_MAP = {
+      nav_home: "nav-home",
+      nav_features: "nav-features",
+      nav_compare: "nav-compare",
+      nav_pricing: "nav-pricing",
+      plans_label: "plans-label",
+      plans_h1: "plans-h1",
+      plans_sub: "plans-sub",
+      plans_back: "plans-back",
+      th_feature: "th-feature",
+      footer_appstore: "footer-appstore",
+      footer_support: "footer-support",
+      footer_privacy: "footer-privacy",
+      footer_terms: "footer-terms",
+      footer_copy: "footer-copy",
+      footer_contact_label: "footer-contact-label",
+      footer_support_label: "footer-support-label",
+      note_online: "note-online",
+      note_hd: "note-hd"
+    };
+
+    let currentLang = "en";
+
+    function renderValue(value) {
+      if (value === CHECK) return '<span class="plan-check" aria-label="Included">✓</span>';
+      if (value === DASH) return '<span class="plan-dash">—</span>';
+      return value;
+    }
+
+    function renderRows(rows) {
+      const body = document.getElementById("plans-table-body");
+      body.innerHTML = rows.map(row => `
+        <tr>
+          <td>${row[0]}</td>
+          <td>${renderValue(row[1])}</td>
+          <td>${renderValue(row[2])}</td>
+          <td>${renderValue(row[3])}</td>
+          <td>${renderValue(row[4])}</td>
+        </tr>
+      `).join("");
+    }
+
+    function applyLang(lang) {
+      currentLang = TRANSLATIONS[lang] ? lang : "en";
+      const t = TRANSLATIONS[currentLang];
+
+      for (const [key, id] of Object.entries(KEY_MAP)) {
+        const el = document.getElementById(id);
+        if (el && t[key] !== undefined) el.textContent = t[key];
+      }
+
+      renderRows(t.rows);
+      document.documentElement.lang = currentLang;
+
+      const meta = LANG_META[currentLang];
+      const langCurrent = document.getElementById("lang-current");
+      if (langCurrent && meta) langCurrent.textContent = meta.flag + " " + meta.label;
+
+      document.querySelectorAll(".lang-option").forEach(el => {
+        el.classList.toggle("active", el.dataset.lang === currentLang);
+      });
+
+      const query = "?lang=" + encodeURIComponent(currentLang);
+      document.querySelectorAll(".home-link").forEach(link => link.href = "index.html" + query);
+      document.querySelectorAll(".features-link").forEach(link => link.href = "index.html" + query + "#features");
+      document.querySelectorAll(".compare-link").forEach(link => link.href = "plans.html" + query);
+      document.querySelectorAll(".pricing-link").forEach(link => link.href = "index.html" + query + "#pricing");
+
+      const dropdown = document.getElementById("lang-dropdown");
+      if (dropdown) dropdown.classList.remove("open");
+
+      try { localStorage.setItem("glosspage-lang", currentLang); } catch (e) { }
+    }
+
+    function buildSwitcher() {
+      const btn = document.getElementById("lang-switcher-btn");
+      const dropdown = document.getElementById("lang-dropdown");
+      if (!btn || !dropdown) return;
+
+      btn.addEventListener("click", e => {
+        e.stopPropagation();
+        dropdown.classList.toggle("open");
+      });
+
+      document.addEventListener("click", () => dropdown.classList.remove("open"));
+      dropdown.addEventListener("click", e => e.stopPropagation());
+
+      for (const [code, meta] of Object.entries(LANG_META)) {
+        const opt = document.createElement("div");
+        opt.className = "lang-option";
+        opt.dataset.lang = code;
+        opt.textContent = meta.flag + "  " + meta.label;
+        opt.addEventListener("click", () => applyLang(code));
+        dropdown.appendChild(opt);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      buildSwitcher();
+
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get("lang");
+      const saved = (() => { try { return localStorage.getItem("glosspage-lang"); } catch (e) { return null; } })();
+      const browser = (navigator.language || "").split("-")[0];
+      const supported = Object.keys(TRANSLATIONS);
+      const detected = urlLang || saved || (supported.includes(browser) ? browser : "en");
+      applyLang(detected);
+    });
+  </script>
+</body>
+
+</html>
